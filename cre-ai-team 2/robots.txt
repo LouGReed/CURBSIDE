@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cre-ai-team.com/sitemap.xml
