@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>cre-ai-team — AI solutions engineering for commercial real estate</title>
-<meta name="description" content="A practice of senior solutions engineers, embedded with commercial real estate teams. We ship production AI on the systems you already run — Yardi, MRI, Argus, VTS — not slideware.">
+<title>cre · ai · team — AI tools built by brokers, for brokers</title>
+<meta name="description" content="AI tools built by brokers, for brokers. A small team of software engineers and CRE brokers leveraging AI. For modern CRE, who like their software faster, cheaper and easier. ">
 <meta name="theme-color" content="#a8472b">
-<link rel="canonical" href="https://cre-ai-team.com/">
+<link rel="canonical" href="https://cre-team.com/">
 
 <!-- Open Graph / social -->
-<meta property="og:title" content="cre-ai-team — AI solutions engineering for commercial real estate">
-<meta property="og:description" content="A practice of senior solutions engineers, embedded with CRE teams. Production AI on your stack — not slideware.">
+<meta property="og:title" content="cre · ai · team — AI tools built by brokers, for brokers">
+<meta property="og:description" content="A small team of software engineers and CRE brokers leveraging AI. Built with brokerages working office, industrial, retail, and medical.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cre-ai-team.com/">
-<meta property="og:site_name" content="cre-ai-team">
+<meta property="og:url" content="https://cre-team.com/">
+<meta property="og:site_name" content="cre-team">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Favicon (inline SVG, no extra request) -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f5efe6'/%3E%3Cpath d='M22 44 V20 h12 a8 8 0 0 1 0 16 h-8 m8 0 l10 8' stroke='%23a8472b' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f5efe6'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23a8472b' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23a8472b'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,36 +25,39 @@
 
 <style>
   :root{
-    --bg:#f5efe6;       /* warm cream */
-    --bg-2:#ebe3d4;     /* deeper cream */
-    --paper:#fffcf6;    /* paper white */
+    --bg:#f5efe6;
+    --bg-2:#ebe3d4;
+    --paper:#fffcf6;
     --ink:#1c1a17;
     --ink-soft:#3a342e;
     --muted:#6a5f52;
     --line:rgba(28,26,23,.14);
     --line-2:rgba(28,26,23,.28);
-    --accent:#a8472b;       /* terracotta */
+    --accent:#a8472b;
     --accent-deep:#7a3220;
     --accent-soft:#f0d9cc;
-    --accent-leaf:#4a5c3a;  /* secondary olive */
+    --dark-bg:#221d18;
+    --dark-line:rgba(245,239,230,.16);
+    --dark-text:#f5efe6;
+    --dark-muted:#a89e8d;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6}
   a{color:inherit;text-decoration:none}
   .serif{font-family:'Cormorant Garamond',Georgia,serif}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
   ::selection{background:var(--accent-soft);color:var(--accent-deep)}
 
-  /* Skip link for accessibility */
   .skip{position:absolute;top:-40px;left:8px;background:var(--ink);color:var(--bg);padding:8px 16px;z-index:100;border-radius:4px}
   .skip:focus{top:8px}
 
   /* NAV */
-  nav{padding:28px 0;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(8px);background:rgba(245,239,230,.92)}
+  nav{padding:28px 0;border-bottom:1px solid var(--line);background:rgba(245,239,230,.92);position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(8px)}
   nav .row{display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.005em;font-style:italic;color:var(--accent-deep);display:flex;align-items:baseline;gap:6px}
-  .logo .amp{color:var(--muted);font-style:normal;font-weight:500;font-size:22px;padding:0 2px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:.005em;font-style:italic;color:var(--accent-deep);display:flex;align-items:baseline;gap:4px}
+  .logo .dot{color:var(--muted);font-style:normal;font-weight:400;font-size:20px;padding:0 4px}
+  .logo .tag{font-family:'Inter',sans-serif;font-style:normal;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-left:14px;padding-left:14px;border-left:1px solid var(--line)}
   .nav-links{display:flex;gap:36px;font-size:14px;color:var(--muted);font-weight:500;align-items:center}
   .nav-links a{transition:color .15s}
   .nav-links a:hover{color:var(--ink)}
@@ -65,88 +68,89 @@
   .btn-ghost:hover{background:var(--paper);border-color:var(--ink)}
 
   /* HERO */
-  .hero{padding:104px 0 96px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;top:60%;right:-180px;width:520px;height:520px;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 65%);opacity:.55;pointer-events:none}
-  .established{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:18px;margin-bottom:36px;letter-spacing:.01em;position:relative;z-index:1}
-  .established::before{content:"— ";color:var(--accent);font-style:normal;font-weight:500}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,86px);line-height:1;letter-spacing:-.018em;font-weight:500;max-width:920px;margin-bottom:32px;color:var(--ink);position:relative;z-index:1}
+  .hero{padding:96px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;top:55%;right:-180px;width:520px;height:520px;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 65%);opacity:.55;pointer-events:none}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent);font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6.5vw,82px);line-height:1.02;letter-spacing:-.018em;font-weight:500;max-width:980px;margin-bottom:28px;color:var(--ink);position:relative;z-index:1}
   h1 em{font-style:italic;color:var(--accent-deep)}
-  .lede{font-size:clamp(17px,1.5vw,21px);color:var(--muted);max-width:640px;margin-bottom:44px;line-height:1.55;position:relative;z-index:1}
+  .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,1.7vw,24px);color:var(--ink-soft);max-width:780px;margin-bottom:40px;line-height:1.45;position:relative;z-index:1}
   .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
 
-  /* INTRO BAND */
+  /* PREMISE BAND */
   .band{padding:88px 0;background:var(--paper);border-bottom:1px solid var(--line)}
   .band-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:88px;align-items:start}
-  .band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,42px);line-height:1.05;letter-spacing:-.01em;font-weight:500}
-  .band h2 em{color:var(--accent-deep);font-style:italic}
-  .band-body p{font-size:17px;line-height:1.75;color:var(--ink-soft);margin-bottom:20px}
+  .band-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--accent);font-weight:500;line-height:1.1}
+  .band-label::before{content:"";display:block;width:36px;height:2px;background:var(--accent);margin-bottom:18px}
+  .band-body p{font-size:17px;line-height:1.75;color:var(--ink-soft);margin-bottom:18px}
   .band-body p:last-child{margin-bottom:0}
-  .band-body p:first-child::first-letter{font-family:'Cormorant Garamond',serif;font-size:68px;float:left;line-height:.85;padding:6px 14px 0 0;color:var(--accent-deep);font-weight:500}
+  .band-body p:first-child::first-letter{font-family:'Cormorant Garamond',serif;font-size:64px;float:left;line-height:.85;padding:6px 12px 0 0;color:var(--accent-deep);font-weight:500}
 
-  /* SECTIONS */
-  .section{padding:104px 0;border-bottom:1px solid var(--line)}
-  .section-eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--accent);margin-bottom:18px}
-  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,52px);letter-spacing:-.012em;font-weight:500;max-width:780px;line-height:1.05;margin-bottom:72px}
+  /* PRODUCTS SECTION */
+  .section{padding:96px 0;border-bottom:1px solid var(--line)}
+  .section-eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent);margin-bottom:18px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,52px);letter-spacing:-.012em;font-weight:500;max-width:780px;line-height:1.05;margin-bottom:64px}
   .section-title em{font-style:italic;color:var(--accent-deep)}
 
-  /* PRACTICES */
-  .practices{display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
-  .practice{padding-top:24px;border-top:2px solid var(--accent-deep);position:relative}
-  .practice-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--accent);margin-bottom:14px}
-  .practice h3{font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:-.005em;margin-bottom:14px;font-weight:500;line-height:1.15;color:var(--ink)}
-  .practice p{font-size:15px;color:var(--muted);line-height:1.7}
+  .products{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .product{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:32px 36px;position:relative;transition:border-color .2s, transform .2s}
+  .product:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .product-num{position:absolute;top:24px;right:28px;width:32px;height:32px;border-radius:50%;background:var(--accent-deep);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;font-style:italic}
+  .product h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;letter-spacing:-.005em;line-height:1.1;color:var(--ink);margin-bottom:10px;padding-right:48px}
+  .product-tag{font-family:'Inter',sans-serif;font-size:11px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
+  .product p{font-size:15px;color:var(--ink-soft);line-height:1.65}
+  .product .builtwith{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--accent)}
 
-  /* WHAT WE SHIP - concrete deliverables */
-  .ships{background:var(--bg-2);padding:104px 0;border-bottom:1px solid var(--line)}
-  .ships-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line-2);border-left:1px solid var(--line-2)}
-  .ship{padding:32px 36px;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);background:var(--bg-2);transition:background .2s}
-  .ship:hover{background:var(--paper)}
-  .ship-cat{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--accent);margin-bottom:8px;letter-spacing:.02em}
-  .ship h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;letter-spacing:-.005em;margin-bottom:10px;color:var(--ink);line-height:1.2}
-  .ship p{font-size:14px;color:var(--muted);line-height:1.6}
+  /* WATCHTOWER — dark band */
+  .watchtower{padding:88px 0;background:var(--dark-bg);color:var(--dark-text);position:relative;border-bottom:1px solid var(--line)}
+  .watchtower .section-eyebrow{color:var(--accent)}
+  .wt-head{display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start;margin-bottom:36px}
+  .wt-num{width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--dark-text);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;font-style:italic;flex-shrink:0}
+  .wt-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,54px);font-weight:500;letter-spacing:-.01em;line-height:1.05;color:var(--dark-text);margin-bottom:10px}
+  .wt-subtitle{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:18px}
+  .wt-body{font-size:17px;line-height:1.7;color:var(--dark-text);max-width:820px;margin-bottom:48px;margin-left:88px}
+  .wt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 56px;margin-left:88px;max-width:1000px}
+  .wt-item{position:relative;padding-left:20px}
+  .wt-item::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .wt-item h4{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-text);font-weight:600;margin-bottom:6px}
+  .wt-item p{font-size:14px;color:var(--dark-muted);line-height:1.55}
 
-  /* INDUSTRIES band */
-  .industries{padding:64px 0;border-bottom:1px solid var(--line);background:var(--bg)}
-  .industries-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--accent);text-align:center;margin-bottom:28px}
-  .industries-row{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
-  .industries-row span{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink-soft);font-weight:500;letter-spacing:-.005em}
-  .industries-row span::before{content:"·";color:var(--accent);margin-right:48px;font-size:18px}
-  .industries-row span:first-child::before{display:none}
+  /* SOCIAL PROOF / BUILT WITH */
+  .builtwith-band{padding:80px 0;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .bw-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:center}
+  .bw-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,3.2vw,40px);line-height:1.18;letter-spacing:-.005em;color:var(--ink);font-weight:500}
+  .bw-quote em{color:var(--accent-deep);font-style:italic}
+  .bw-meta{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);margin-top:24px;letter-spacing:.04em;line-height:1.6}
+  .bw-meta strong{color:var(--ink);font-weight:600}
+  .bw-territory{padding:32px;background:var(--paper);border:1px solid var(--line);border-radius:8px}
+  .bw-territory h5{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--accent);margin-bottom:14px;font-weight:500}
+  .bw-territory p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:14px}
+  .bw-territory p:last-child{margin-bottom:0}
+  .bw-territory strong{color:var(--ink);font-weight:600}
 
-  /* PROCESS */
-  .process{padding:104px 0;background:var(--paper);border-bottom:1px solid var(--line)}
-  .process-list{display:flex;flex-direction:column;gap:0;max-width:820px;margin:0 auto}
-  .step{display:grid;grid-template-columns:96px 1fr 120px;gap:36px;padding:40px 0;border-bottom:1px solid var(--line);align-items:start}
-  .step:last-child{border-bottom:none}
-  .step-num{font-family:'Cormorant Garamond',serif;font-size:54px;color:var(--accent-deep);font-style:italic;font-weight:500;line-height:1}
-  .step h4{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:10px;font-weight:500;line-height:1.1;letter-spacing:-.005em}
-  .step p{font-size:15.5px;color:var(--muted);line-height:1.65}
-  .step .duration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--accent);text-align:right;padding-top:12px}
-
-  /* PRINCIPLES */
-  .principles{padding:104px 0;border-bottom:1px solid var(--line);background:var(--bg-2)}
-  .principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
-  .principle{margin-bottom:32px}
-  .principle:last-child{margin-bottom:0}
-  .principle h5{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;margin-bottom:8px;color:var(--ink);font-style:italic}
-  .principle h5::before{content:"§ ";color:var(--accent);font-style:normal}
-  .principle p{font-size:15px;color:var(--ink-soft);line-height:1.65}
+  /* HOW WE WORK */
+  .how{padding:96px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:48px}
+  .how-step{padding-top:22px;border-top:2px solid var(--accent-deep);position:relative}
+  .how-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--accent);margin-bottom:10px;font-weight:500}
+  .how-step h4{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:-.005em;margin-bottom:12px;font-weight:500;color:var(--ink)}
+  .how-step h4 em{font-style:italic;color:var(--accent-deep)}
+  .how-step p{font-size:15px;color:var(--muted);line-height:1.7}
 
   /* CTA */
-  .cta{padding:136px 0;text-align:center;background:var(--paper);position:relative;overflow:hidden}
+  .cta{padding:128px 0;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
   .cta::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:780px;height:380px;background:radial-gradient(ellipse,var(--accent-soft) 0%,transparent 65%);pointer-events:none;opacity:.6}
   .cta-inner{position:relative;z-index:1}
-  .cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5.5vw,68px);letter-spacing:-.015em;font-weight:500;margin-bottom:24px;line-height:1.02}
+  .cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5.5vw,68px);letter-spacing:-.015em;font-weight:500;margin-bottom:20px;line-height:1.02}
   .cta h2 em{color:var(--accent-deep);font-style:italic}
-  .cta p{font-size:18px;color:var(--muted);margin-bottom:44px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.55}
-  .cta-email{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--accent-deep);margin-top:24px;display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:4px}
+  .cta p{font-size:18px;color:var(--muted);margin-bottom:40px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.55}
+  .cta-email{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--accent-deep);margin-top:24px;display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:4px}
   .cta-email:hover{color:var(--accent)}
 
   /* FOOTER */
-  footer{padding:56px 0 40px;font-size:13.5px;color:var(--muted);background:var(--bg)}
+  footer{padding:56px 0 44px;font-size:13.5px;color:var(--muted);background:var(--bg)}
   .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px}
   .foot-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--accent-deep);margin-bottom:6px;font-weight:500}
-  .foot-tag{color:var(--muted);font-size:13px}
+  .foot-tag{color:var(--muted);font-size:13px;font-family:'Cormorant Garamond',serif;font-style:italic}
   .foot-meta{text-align:right;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted)}
 
   /* Scroll reveal */
@@ -155,22 +159,23 @@
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
   /* RESPONSIVE */
-  @media(max-width:880px){
+  @media(max-width:900px){
     .nav-links a:not(.btn){display:none}
-    .band-grid,.practices,.principles-grid{grid-template-columns:1fr;gap:40px}
-    .ships-grid{grid-template-columns:1fr}
-    .step{grid-template-columns:60px 1fr;gap:20px}
-    .step-num{font-size:42px}
-    .step .duration{grid-column:2;text-align:left;padding-top:4px}
-    .industries-row{gap:24px}
-    .industries-row span::before{margin-right:24px}
-    .section,.process,.principles,.ships,.band{padding:72px 0}
-    .hero{padding:72px 0 64px}
+    .logo .tag{display:none}
+    .band-grid,.products,.bw-grid,.how-grid{grid-template-columns:1fr;gap:32px}
+    .wt-head{grid-template-columns:48px 1fr;gap:18px}
+    .wt-body,.wt-grid{margin-left:0}
+    .wt-grid{grid-template-columns:repeat(2,1fr);gap:24px 32px}
+    .section,.watchtower,.builtwith-band,.how,.band{padding:64px 0}
+    .hero{padding:64px 0 56px}
+    .cta{padding:88px 0}
   }
   @media(max-width:560px){
-    .wrap{padding:0 24px}
-    .industries-row{flex-direction:column;gap:8px}
-    .industries-row span::before{display:none}
+    .wrap{padding:0 22px}
+    .wt-grid{grid-template-columns:1fr}
+    .product{padding:26px 24px}
+    .product-num{top:20px;right:22px;width:28px;height:28px;font-size:15px}
+    .product h3{font-size:26px;padding-right:36px}
   }
 </style>
 </head>
@@ -180,12 +185,15 @@
 
 <nav aria-label="Primary">
   <div class="wrap row">
-    <a href="/" class="logo">cre<span class="amp">·</span>ai<span class="amp">·</span>team</a>
+    <a href="/" class="logo">
+      <span>cre</span><span class="dot">·</span><span>ai</span><span class="dot">·</span><span>team</span>
+      <span class="tag">Software for modern CRE</span>
+    </a>
     <div class="nav-links">
-      <a href="#practice">Practice</a>
-      <a href="#ships">What we ship</a>
-      <a href="#engagement">Engagement</a>
-      <a class="btn btn-ghost" href="#contact">Inquire →</a>
+      <a href="#products">Products</a>
+      <a href="#watchtower">Watchtower</a>
+      <a href="#builtwith">Built with</a>
+      <a class="btn btn-ghost" href="#contact">Talk to an engineer →</a>
     </div>
   </div>
 </nav>
@@ -194,163 +202,140 @@
 
 <section class="hero">
   <div class="wrap">
-    <p class="established reveal">A practice of solutions engineers, in service of commercial real estate.</p>
-    <h1 class="reveal">Considered <em>AI</em> for the people who own and operate <em>real assets.</em></h1>
-    <p class="lede reveal">We aren't a SaaS. We aren't a consultancy. We're a small team of senior engineers who embed with CRE operators and ship production AI on the stack you already run — Yardi, MRI, Argus, VTS — not slideware, and not yet-another-platform you have to adopt.</p>
+    <p class="eyebrow reveal">Solutions engineering for commercial real estate</p>
+    <h1 class="reveal">AI tools built <em>by brokers, for brokers.</em></h1>
+    <p class="lede reveal">Built by a small team of software engineers and CRE brokers leveraging AI. We build dealflow and leasing tools to make your work faster, cheaper, and easier.</p>
     <div class="cta-row reveal">
-      <a class="btn btn-primary" href="#contact">Request an introduction →</a>
-      <a class="btn btn-ghost" href="#practice">Read our approach</a>
+      <a class="btn btn-primary" href="#contact">Book a call with an engineer →</a>
+      <a class="btn btn-ghost" href="#products">See the products</a>
     </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap band-grid">
-    <h2 class="reveal">A practice, <em>not a product.</em></h2>
+    <p class="band-label reveal">What we do for CRE brokerages</p>
     <div class="band-body reveal">
-      <p>Most of what gets called "AI for real estate" is either a wrapper around a chatbot or a venture-backed platform that asks you to abandon the systems you already trust. Neither fits how serious operators actually work.</p>
-      <p>We took a different posture. A small group of senior engineers, working in residency with a handful of CRE firms each year. We learn the moves of your asset, leasing, and acquisitions teams; we automate the parts that don't need a human in the loop; and we ship to production on the stack you already run.</p>
-      <p>The work is quieter than the marketing in our industry suggests it should be. We prefer it that way.</p>
+      <p>You don't need another generic CRM. You need edge on the parts of the deal that quietly eat your week: putting together investor decks, running tours, tracking lease dates, watching the market, and showing your value when nothing's moving.</p>
+      <p>Each product below replaces something you're already doing by hand with one built around how your brokerage actually runs.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="practice">
+<section class="section" id="products">
   <div class="wrap">
-    <p class="section-eyebrow reveal">— the practice</p>
-    <h2 class="section-title reveal">Three lanes of work, <em>all in production.</em></h2>
-    <div class="practices">
-      <div class="practice reveal">
-        <p class="practice-label">i. — Deploy</p>
-        <h3>Production AI on your existing stack</h3>
-        <p>Integrated with the systems your team already trusts — Yardi, MRI, Argus, VTS, RealPage, Salesforce. We build it; you own it. No vendor lock-in, no rip-and-replace.</p>
-      </div>
-      <div class="practice reveal">
-        <p class="practice-label">ii. — Embed</p>
-        <h3>Engineers in residence with your teams</h3>
-        <p>Senior engineers sit alongside your asset managers, leasing agents, and acquisitions teams. We learn the workflow as practiced, then automate it carefully.</p>
-      </div>
-      <div class="practice reveal">
-        <p class="practice-label">iii. — Steward</p>
-        <h3>An ongoing relationship, not a project</h3>
-        <p>We remain on as your AI operating partner. Evaluations, monitoring, new use cases as your portfolio evolves. Measured on systems live, not hours billed.</p>
-      </div>
+    <p class="section-eyebrow reveal">— the product suite</p>
+    <h2 class="section-title reveal">Four tools your brokers <em>open every day.</em></h2>
+
+    <div class="products">
+
+      <article class="product reveal">
+        <span class="product-num">1</span>
+        <h3>Deck Smart</h3>
+        <p class="product-tag">Investor decks, in days not weeks</p>
+        <p>Turn the weeks-long slog of putting together an investor deck into a few guided days. Share the site, the specifics, the story, and your brand colors. We handle the editing, formatting, color, and layout. Reclaim tens of hours and spend them where they matter: sharpening the pitch and getting stakeholders aligned.</p>
+      </article>
+
+      <article class="product reveal">
+        <span class="product-num">2</span>
+        <h3>Tour Guide</h3>
+        <p class="product-tag">Match, tour, close — on the leasing side</p>
+        <p>Pulls your book and your CRM together, then matches tenants to the right properties on the spot. Produces a touring packet on your letterhead, maps the tour for convenience, and lays out the factors that close the deal for tenants weighing high-stakes leasing decisions.</p>
+      </article>
+
+      <article class="product reveal">
+        <span class="product-num">3</span>
+        <h3>It Won't Move</h3>
+        <p class="product-tag">Demonstrate value when the market doesn't</p>
+        <p>Pulls exposure, inquiries, showings, outreach, and the qualified names still in the pipeline straight from your CRM and shows it as a clean one-page deal funnel. Even in market downturns, so brokers can show owners exactly what's happening, what's next, and where the real movement is hiding.</p>
+        <p class="builtwith">Built for the stretches when listings aren't moving.</p>
+      </article>
+
+      <article class="product reveal">
+        <span class="product-num">4</span>
+        <h3>Tenant HQ</h3>
+        <p class="product-tag">Never lose a renegotiation window again</p>
+        <p>Renegotiation windows are often just 30 days — across a full book, those windows quietly disappear and so does the margin. Tenant HQ puts every critical date on one calendar, so you walk in earlier and better prepared than anyone else at the table.</p>
+      </article>
+
     </div>
   </div>
 </section>
 
-<section class="ships" id="ships">
+<section class="watchtower" id="watchtower">
   <div class="wrap">
-    <p class="section-eyebrow reveal">— what we ship</p>
-    <h2 class="section-title reveal">Concrete systems, <em>not abstractions.</em></h2>
-    <div class="ships-grid reveal">
-      <div class="ship">
-        <p class="ship-cat">Acquisitions</p>
-        <h4>Deal screening &amp; underwriting copilots</h4>
-        <p>Triage inbound deal flow against your investment criteria. Auto-extract rent rolls, T-12s, and offering memorandums into your model template.</p>
-      </div>
-      <div class="ship">
-        <p class="ship-cat">Asset management</p>
-        <h4>Lease abstraction &amp; clause intelligence</h4>
-        <p>Abstract executed leases into structured fields with citation links. Flag renewal options, escalations, exclusives, and co-tenancy triggers automatically.</p>
-      </div>
-      <div class="ship">
-        <p class="ship-cat">Leasing</p>
-        <h4>Rent-comp synthesis &amp; market intelligence</h4>
-        <p>Continuously ingest broker reports, public filings, and your internal comps to maintain a live market view by submarket and product type.</p>
-      </div>
-      <div class="ship">
-        <p class="ship-cat">Tenant relations</p>
-        <h4>Tenant communications &amp; maintenance triage</h4>
-        <p>Route, classify, and respond to tenant requests across email and portal. Escalate the 10% that need humans; handle the 90% that don't.</p>
-      </div>
-      <div class="ship">
-        <p class="ship-cat">Portfolio operations</p>
-        <h4>Variance &amp; anomaly monitoring</h4>
-        <p>Detect anomalies across budget vs. actual, occupancy, collections, and CAM reconciliation. Surface what an asset manager would catch — at portfolio scale.</p>
-      </div>
-      <div class="ship">
-        <p class="ship-cat">Custom</p>
-        <h4>Whatever your team needs next</h4>
-        <p>Every portfolio has its own highest-leverage use case. Most of our best work begins as a conversation with a frustrated asset manager. We listen for that.</p>
+    <p class="section-eyebrow reveal">— the fifth product</p>
+    <div class="wt-head reveal">
+      <span class="wt-num">5</span>
+      <div>
+        <h2 class="wt-title">Watchtower</h2>
+        <p class="wt-subtitle">The sword in the stone — market intel for the brokerages working your territory</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="industries">
-  <div class="wrap">
-    <p class="industries-label reveal">We work across</p>
-    <div class="industries-row reveal">
-      <span>Office</span>
-      <span>Industrial</span>
-      <span>Multifamily</span>
-      <span>Retail</span>
-      <span>Self-storage</span>
-      <span>Data centers</span>
-    </div>
-  </div>
-</section>
-
-<section class="process" id="engagement">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:64px">
-      <p class="section-eyebrow reveal">— the engagement</p>
-      <h2 class="section-title reveal" style="margin:0 auto;text-align:center">A diagnostic, a deployment, then <em>the long work.</em></h2>
-    </div>
-    <div class="process-list">
-      <div class="step reveal">
-        <div class="step-num">i.</div>
-        <div>
-          <h4>Diagnose</h4>
-          <p>We map your data, your workflows, and your deal flow. Together we surface the highest-leverage use case — the one that moves NOI or lease velocity, not the one that demos well in a partner meeting.</p>
-        </div>
-        <div class="duration">two weeks</div>
+    <p class="wt-body reveal">Eyes on every filing, listing, sale, and ownership change in your territory — parish, ZIP, or submarket. A small set of watchers pulls the data your team would never have time to chase, so you know what's changed before anyone else does.</p>
+    <div class="wt-grid reveal">
+      <div class="wt-item">
+        <h4>Permits</h4>
+        <p>Pulls new filings the day they post.</p>
       </div>
-      <div class="step reveal">
-        <div class="step-num">ii.</div>
-        <div>
-          <h4>Deploy</h4>
-          <p>We ship the first system to production. Usually deal screening, lease abstraction, or rent-comp synthesis. On your stack, in your environment, owned by you on day one.</p>
-        </div>
-        <div class="duration">three weeks</div>
+      <div class="wt-item">
+        <h4>Expireds</h4>
+        <p>Reports every expired listing in territory.</p>
       </div>
-      <div class="step reveal">
-        <div class="step-num">iii.</div>
-        <div>
-          <h4>Steward</h4>
-          <p>We stay on. New use case shipped each cycle. Continuous evaluations, monitoring, and retraining run in the background. The relationship lengthens as your portfolio does.</p>
-        </div>
-        <div class="duration">ongoing</div>
+      <div class="wt-item">
+        <h4>New Listings</h4>
+        <p>Surfaces inventory the moment it hits market.</p>
+      </div>
+      <div class="wt-item">
+        <h4>Solds</h4>
+        <p>Logs the day's closed transactions.</p>
+      </div>
+      <div class="wt-item">
+        <h4>White Pages</h4>
+        <p>Up to the daily cap — contacts, portfolios, last buy.</p>
+      </div>
+      <div class="wt-item">
+        <h4>Ownership</h4>
+        <p>Names the principal behind every LLC.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="principles">
+<section class="builtwith-band" id="builtwith">
+  <div class="wrap bw-grid">
+    <div class="reveal">
+      <p class="section-eyebrow">— built with brokers</p>
+      <p class="bw-quote">Designed in residency with the brokerages and operators running deals — including <em>JLL</em>, and the operators carrying hundreds of leases at once.</p>
+      <p class="bw-meta"><strong>Design partners.</strong> Brokerages working office, industrial, retail, and medical, on both sales and leasing side.</p>
+    </div>
+    <div class="bw-territory reveal">
+      <h5>Your territory</h5>
+      <p><strong>Wherever your brokerage runs deals.</strong> Watchtower configures to whatever geography your brokers actually work — parish, ZIP, submarket, county, or MSA.</p>
+      <p><strong>However your brokerage is structured.</strong> Office, industrial, retail, medical. Sales side or leasing side. The tooling adapts to how you work — not the other way around.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
   <div class="wrap">
-    <p class="section-eyebrow reveal" style="text-align:left">— how we hold ourselves</p>
-    <h2 class="section-title reveal">Four <em>operating principles.</em></h2>
-    <div class="principles-grid">
-      <div class="reveal">
-        <div class="principle">
-          <h5>Production or it didn't happen.</h5>
-          <p>A demo is not a deliverable. We measure ourselves on systems live in your environment, used daily by your team, contributing to your numbers.</p>
-        </div>
-        <div class="principle">
-          <h5>Your stack, not ours.</h5>
-          <p>We integrate with Yardi, MRI, Argus, VTS, RealPage, Salesforce — the systems you already trust. We will never ask you to migrate to a platform we control.</p>
-        </div>
+    <p class="section-eyebrow reveal">— how we work</p>
+    <h2 class="section-title reveal">Three steps. <em>No platform to learn.</em></h2>
+    <div class="how-grid">
+      <div class="how-step reveal">
+        <p class="how-num">i.</p>
+        <h4>Talk to a software engineer</h4>
+        <p>Thirty minutes with someone who has actually built these tools — not a sales call. Tell us exactly what's costing you time and money, and only pay for the solutions you'll actually use.</p>
       </div>
-      <div class="reveal">
-        <div class="principle">
-          <h5>Evaluation before scale.</h5>
-          <p>Every model in production has continuous evaluations. We know when it drifts. We know what it gets wrong. We tell you before you ask.</p>
-        </div>
-        <div class="principle">
-          <h5>Quiet over loud.</h5>
-          <p>We don't publish hot takes about agents replacing brokers. We ship working systems, write careful documentation, and let the work compound.</p>
-        </div>
+      <div class="how-step reveal">
+        <p class="how-num">ii.</p>
+        <h4>Customize to fit within <em>your</em> team</h4>
+        <p>We tailor the tool to your CRM, your book, your letterhead, and the way your brokers already work. No new platform to learn: the product adapts to your brokerage, not the other way around.</p>
+      </div>
+      <div class="how-step reveal">
+        <p class="how-num">iii.</p>
+        <h4>Roll out with full training and support</h4>
+        <p>We deploy the tool, train your team, and stay with you for ongoing support. Most brokerages we work with are running two or three of the five within ninety days.</p>
       </div>
     </div>
   </div>
@@ -358,10 +343,10 @@
 
 <section class="cta" id="contact">
   <div class="wrap cta-inner">
-    <h2>Let's begin <em>a quiet conversation.</em></h2>
-    <p>Thirty minutes. We'll show you, candidly, where AI moves the needle on your portfolio — and where it doesn't. No deck. No pitch. Just a conversation.</p>
-    <a class="btn btn-primary" href="mailto:hello@cre-ai-team.com?subject=Inquiry%20from%20cre-ai-team.com" style="padding:16px 32px;font-size:15px">Email hello@cre-ai-team.com →</a>
-    <p style="margin-top:32px"><a class="cta-email" href="mailto:hello@cre-ai-team.com">hello@cre-ai-team.com</a></p>
+    <h2>Begin a <em>quiet conversation.</em></h2>
+    <p>Thirty minutes with a software engineer who's built these tools with brokerages like yours. No deck. No pitch. Just a real conversation about where the hours are going on your deals.</p>
+    <a class="btn btn-primary" href="mailto:hello@cre-team.com?subject=Talk%20to%20an%20engineer%20—%20cre-team.com" style="padding:16px 32px;font-size:15px">Email hello@cre-team.com →</a>
+    <p style="margin-top:32px"><a class="cta-email" href="mailto:hello@cre-team.com">hello@cre-team.com</a></p>
   </div>
 </section>
 
@@ -370,18 +355,17 @@
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <p class="foot-brand">cre-ai-team</p>
-      <p class="foot-tag">A practice in service of commercial real estate · Est. 2026</p>
+      <p class="foot-brand">cre · ai · team</p>
+      <p class="foot-tag">Built with brokers, for brokers.</p>
     </div>
     <div class="foot-meta">
-      <p>© 2026 cre-ai-team</p>
-      <p><a href="mailto:hello@cre-ai-team.com">hello@cre-ai-team.com</a></p>
+      <p>© 2026 cre-team</p>
+      <p><a href="mailto:hello@cre-team.com">hello@cre-team.com</a></p>
     </div>
   </div>
 </footer>
 
 <script>
-  // Scroll reveal — IntersectionObserver, no library
   (function(){
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
