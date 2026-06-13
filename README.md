@@ -5,7 +5,7 @@ The cre-ai-team marketing site. Static HTML, no build step, deployed via Cloudfl
 ## Stack
 
 - Single `index.html` — no framework, no build
-- Google Fonts loaded via CDN (Cormorant Garamond + Inter)
+- Fonts: Young Serif + Inter via Google Fonts CDN; Young Serif **Bold** self-hosted in `/fonts` (used for the logo wordmark)
 - Cloudflare Pages for hosting (auto-deploys on push to `main`)
 - Custom domain: `cre-ai-team.com`
 

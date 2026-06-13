@@ -3,109 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>cre · ai · team — AI tools built by brokers, for brokers</title>
+<title>Curbside CRE — AI tools built by brokers, for brokers</title>
 <meta name="description" content="AI tools built by brokers, for brokers. A small team of software engineers and CRE brokers leveraging AI. For modern CRE, who like their software faster, cheaper and easier. ">
-<meta name="theme-color" content="#a8472b">
-<link rel="canonical" href="https://cre-team.com/">
+<meta name="theme-color" content="#2B2A28">
+<link rel="canonical" href="https://curbside-cre.com/">
 
 <!-- Open Graph / social -->
-<meta property="og:title" content="cre · ai · team — AI tools built by brokers, for brokers">
+<meta property="og:title" content="Curbside CRE — AI tools built by brokers, for brokers">
 <meta property="og:description" content="A small team of software engineers and CRE brokers leveraging AI. Built with brokerages working office, industrial, retail, and medical.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cre-team.com/">
-<meta property="og:site_name" content="cre-team">
+<meta property="og:url" content="https://curbside-cre.com/">
+<meta property="og:site_name" content="Curbside CRE">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f5efe6'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23a8472b' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23a8472b'/%3E%3C/svg%3E">
+<!-- Favicon: coral ball -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FBF6EF'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%23FF6242'/%3E%3Ccircle cx='25' cy='25' r='3.6' fill='%23FBF6EF'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#f5efe6;
-    --bg-2:#ebe3d4;
-    --paper:#fffcf6;
-    --ink:#1c1a17;
-    --ink-soft:#3a342e;
-    --muted:#6a5f52;
-    --line:rgba(28,26,23,.14);
-    --line-2:rgba(28,26,23,.28);
-    --accent:#a8472b;
-    --accent-deep:#7a3220;
-    --accent-soft:#f0d9cc;
-    --dark-bg:#221d18;
-    --dark-line:rgba(245,239,230,.16);
-    --dark-text:#f5efe6;
-    --dark-muted:#a89e8d;
+    --bg:#FBF6EF;
+    --bg-2:#E4DBCD;
+    --paper:#FFFDF8;
+    --ink:#2B2A28;
+    --ink-soft:#46433E;
+    --muted:#736B5F;
+    --line:rgba(43,42,40,.14);
+    --line-2:rgba(43,42,40,.30);
+    --accent:#FF6242;
+    --accent-deep:#C5391A;
+    --accent-soft:#FFE0D6;
+    --dark-bg:#2B2A28;
+    --dark-line:rgba(251,246,239,.16);
+    --dark-text:#FBF6EF;
+    --dark-muted:#A89E8D;
   }
+  @font-face{font-family:'Young Serif';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/youngserif-bold.woff2') format('woff2'),url('fonts/youngserif-bold.ttf') format('truetype')}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6}
   a{color:inherit;text-decoration:none}
-  .serif{font-family:'Cormorant Garamond',Georgia,serif}
+  .serif{font-family:'Young Serif',Georgia,serif}
   .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
   ::selection{background:var(--accent-soft);color:var(--accent-deep)}
 
   .skip{position:absolute;top:-40px;left:8px;background:var(--ink);color:var(--bg);padding:8px 16px;z-index:100;border-radius:4px}
   .skip:focus{top:8px}
 
+  @keyframes roll{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.logo-ball{animation:none!important}}
+
   /* NAV */
-  nav{padding:28px 0;border-bottom:1px solid var(--line);background:rgba(245,239,230,.92);position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(8px)}
+  nav{padding:16px 0;border-bottom:1px solid var(--line);background:rgba(251,246,239,.92);position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(8px)}
   nav .row{display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:.005em;font-style:italic;color:var(--accent-deep);display:flex;align-items:baseline;gap:4px}
-  .logo .dot{color:var(--muted);font-style:normal;font-weight:400;font-size:20px;padding:0 4px}
-  .logo .tag{font-family:'Inter',sans-serif;font-style:normal;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-left:14px;padding-left:14px;border-left:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:15px}
+  .logo-ball{width:24px;height:24px;border-radius:50%;background:var(--accent);position:relative;flex:none;animation:roll 9s linear infinite}
+  .logo-ball::after{content:"";position:absolute;top:22%;left:22%;width:22%;height:22%;border-radius:50%;background:var(--bg)}
+  .logo-lockup{display:flex;flex-direction:column;align-items:stretch}
+  .logo-word{font-family:'Young Serif',serif;font-weight:700;font-size:34px;color:var(--accent);line-height:1}
+  .logo-curb{display:flex;align-items:center;gap:9px;margin-top:6px}
+  .logo-line{height:4px;flex:1;min-width:70px;background:var(--ink);border-radius:2px}
+  .logo-cre{font-family:'Young Serif',serif;font-size:13px;letter-spacing:.24em;color:var(--ink);line-height:1;margin-right:-.24em}
+  .logo .tag{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-left:16px;padding-left:16px;border-left:1px solid var(--line)}
   .nav-links{display:flex;gap:36px;font-size:14px;color:var(--muted);font-weight:500;align-items:center}
   .nav-links a{transition:color .15s}
   .nav-links a:hover{color:var(--ink)}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:2px;font-size:14px;font-weight:500;letter-spacing:.02em;border:1px solid var(--accent-deep);transition:all .2s;cursor:pointer;line-height:1}
-  .btn-primary{background:var(--accent-deep);color:var(--bg)}
-  .btn-primary:hover{background:var(--accent);transform:translateY(-1px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:3px;font-size:14px;font-weight:500;letter-spacing:.01em;border:1px solid var(--accent-deep);transition:all .2s;cursor:pointer;line-height:1}
+  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-1px)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
   .btn-ghost:hover{background:var(--paper);border-color:var(--ink)}
 
   /* HERO */
   .hero{padding:96px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;top:55%;right:-180px;width:520px;height:520px;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 65%);opacity:.55;pointer-events:none}
-  .eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent);font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6.5vw,82px);line-height:1.02;letter-spacing:-.018em;font-weight:500;max-width:980px;margin-bottom:28px;color:var(--ink);position:relative;z-index:1}
-  h1 em{font-style:italic;color:var(--accent-deep)}
-  .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,1.7vw,24px);color:var(--ink-soft);max-width:780px;margin-bottom:40px;line-height:1.45;position:relative;z-index:1}
+  .hero::after{content:"";position:absolute;top:55%;right:-180px;width:520px;height:520px;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 65%);opacity:.6;pointer-events:none}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
+  h1{font-family:'Young Serif',serif;font-size:clamp(40px,6vw,76px);line-height:1.04;letter-spacing:-.005em;font-weight:400;max-width:980px;margin-bottom:28px;color:var(--ink);position:relative;z-index:1}
+  h1 em{font-style:normal;color:var(--accent-deep)}
+  .lede{font-family:'Inter',sans-serif;font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:760px;margin-bottom:40px;line-height:1.5;position:relative;z-index:1}
   .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
 
   /* PREMISE BAND */
   .band{padding:88px 0;background:var(--paper);border-bottom:1px solid var(--line)}
   .band-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:88px;align-items:start}
-  .band-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--accent);font-weight:500;line-height:1.1}
-  .band-label::before{content:"";display:block;width:36px;height:2px;background:var(--accent);margin-bottom:18px}
+  .band-label{font-family:'Young Serif',serif;font-size:30px;color:var(--accent-deep);font-weight:400;line-height:1.12}
+  .band-label::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--ink);margin-bottom:20px}
   .band-body p{font-size:17px;line-height:1.75;color:var(--ink-soft);margin-bottom:18px}
   .band-body p:last-child{margin-bottom:0}
-  .band-body p:first-child::first-letter{font-family:'Cormorant Garamond',serif;font-size:64px;float:left;line-height:.85;padding:6px 12px 0 0;color:var(--accent-deep);font-weight:500}
+  .band-body p:first-child::first-letter{font-family:'Young Serif',serif;font-size:62px;float:left;line-height:.82;padding:8px 14px 0 0;color:var(--accent);font-weight:400}
 
   /* PRODUCTS SECTION */
   .section{padding:96px 0;border-bottom:1px solid var(--line)}
-  .section-eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent);margin-bottom:18px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
-  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,52px);letter-spacing:-.012em;font-weight:500;max-width:780px;line-height:1.05;margin-bottom:64px}
-  .section-title em{font-style:italic;color:var(--accent-deep)}
+  .section-eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);margin-bottom:18px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .section-title{font-family:'Young Serif',serif;font-size:clamp(30px,4.2vw,48px);letter-spacing:-.005em;font-weight:400;max-width:780px;line-height:1.08;margin-bottom:64px}
+  .section-title em{font-style:normal;color:var(--accent-deep)}
 
   .products{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
   .product{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:32px 36px;position:relative;transition:border-color .2s, transform .2s}
   .product:hover{border-color:var(--accent);transform:translateY(-2px)}
-  .product-num{position:absolute;top:24px;right:28px;width:32px;height:32px;border-radius:50%;background:var(--accent-deep);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;font-style:italic}
-  .product h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;letter-spacing:-.005em;line-height:1.1;color:var(--ink);margin-bottom:10px;padding-right:48px}
-  .product-tag{font-family:'Inter',sans-serif;font-size:11px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
+  .product-num{position:absolute;top:24px;right:28px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',serif;font-size:17px;font-weight:400}
+  .product h3{font-family:'Young Serif',serif;font-size:29px;font-weight:400;letter-spacing:-.005em;line-height:1.12;color:var(--ink);margin-bottom:10px;padding-right:48px}
+  .product-tag{font-family:'Inter',sans-serif;font-size:11px;color:var(--accent-deep);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
   .product p{font-size:15px;color:var(--ink-soft);line-height:1.65}
-  .product .builtwith{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--accent)}
+  .product .builtwith{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-family:'Young Serif',serif;font-size:14px;color:var(--accent-deep)}
 
   /* WATCHTOWER — dark band */
   .watchtower{padding:88px 0;background:var(--dark-bg);color:var(--dark-text);position:relative;border-bottom:1px solid var(--line)}
   .watchtower .section-eyebrow{color:var(--accent)}
   .wt-head{display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start;margin-bottom:36px}
-  .wt-num{width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--dark-text);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;font-style:italic;flex-shrink:0}
-  .wt-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,54px);font-weight:500;letter-spacing:-.01em;line-height:1.05;color:var(--dark-text);margin-bottom:10px}
+  .wt-num{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',serif;font-size:22px;font-weight:400;flex-shrink:0;position:relative}
+  .wt-num::after{content:"";position:absolute;top:11px;left:13px;width:7px;height:7px;border-radius:50%;background:var(--dark-bg)}
+  .wt-title{font-family:'Young Serif',serif;font-size:clamp(34px,4.2vw,50px);font-weight:400;letter-spacing:-.005em;line-height:1.08;color:var(--dark-text);margin-bottom:10px}
   .wt-subtitle{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:18px}
   .wt-body{font-size:17px;line-height:1.7;color:var(--dark-text);max-width:820px;margin-bottom:48px;margin-left:88px}
   .wt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 56px;margin-left:88px;max-width:1000px}
@@ -117,12 +128,12 @@
   /* SOCIAL PROOF / BUILT WITH */
   .builtwith-band{padding:80px 0;border-bottom:1px solid var(--line);background:var(--bg-2)}
   .bw-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:center}
-  .bw-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,3.2vw,40px);line-height:1.18;letter-spacing:-.005em;color:var(--ink);font-weight:500}
-  .bw-quote em{color:var(--accent-deep);font-style:italic}
+  .bw-quote{font-family:'Young Serif',serif;font-size:clamp(26px,3vw,38px);line-height:1.22;letter-spacing:-.005em;color:var(--ink);font-weight:400}
+  .bw-quote em{color:var(--accent-deep);font-style:normal}
   .bw-meta{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);margin-top:24px;letter-spacing:.04em;line-height:1.6}
   .bw-meta strong{color:var(--ink);font-weight:600}
   .bw-territory{padding:32px;background:var(--paper);border:1px solid var(--line);border-radius:8px}
-  .bw-territory h5{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--accent);margin-bottom:14px;font-weight:500}
+  .bw-territory h5{font-family:'Young Serif',serif;font-size:22px;color:var(--accent-deep);margin-bottom:14px;font-weight:400}
   .bw-territory p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:14px}
   .bw-territory p:last-child{margin-bottom:0}
   .bw-territory strong{color:var(--ink);font-weight:600}
@@ -130,28 +141,31 @@
   /* HOW WE WORK */
   .how{padding:96px 0;background:var(--paper);border-bottom:1px solid var(--line)}
   .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:48px}
-  .how-step{padding-top:22px;border-top:2px solid var(--accent-deep);position:relative}
-  .how-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--accent);margin-bottom:10px;font-weight:500}
-  .how-step h4{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:-.005em;margin-bottom:12px;font-weight:500;color:var(--ink)}
-  .how-step h4 em{font-style:italic;color:var(--accent-deep)}
+  .how-step{padding-top:22px;border-top:4px solid var(--ink);position:relative}
+  .how-num{font-family:'Young Serif',serif;font-size:16px;color:var(--accent-deep);margin-bottom:10px;font-weight:400}
+  .how-step h4{font-family:'Young Serif',serif;font-size:25px;letter-spacing:-.005em;margin-bottom:12px;font-weight:400;color:var(--ink)}
+  .how-step h4 em{font-style:normal;color:var(--accent-deep)}
   .how-step p{font-size:15px;color:var(--muted);line-height:1.7}
 
   /* CTA */
   .cta{padding:128px 0;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
-  .cta::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:780px;height:380px;background:radial-gradient(ellipse,var(--accent-soft) 0%,transparent 65%);pointer-events:none;opacity:.6}
+  .cta::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:780px;height:380px;background:radial-gradient(ellipse,var(--accent-soft) 0%,transparent 65%);pointer-events:none;opacity:.65}
   .cta-inner{position:relative;z-index:1}
-  .cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5.5vw,68px);letter-spacing:-.015em;font-weight:500;margin-bottom:20px;line-height:1.02}
-  .cta h2 em{color:var(--accent-deep);font-style:italic}
+  .cta h2{font-family:'Young Serif',serif;font-size:clamp(34px,5vw,62px);letter-spacing:-.008em;font-weight:400;margin-bottom:20px;line-height:1.04}
+  .cta h2 em{color:var(--accent-deep);font-style:normal}
   .cta p{font-size:18px;color:var(--muted);margin-bottom:40px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.55}
-  .cta-email{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--accent-deep);margin-top:24px;display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:4px}
+  .cta-email{font-family:'Young Serif',serif;font-size:22px;color:var(--accent-deep);margin-top:24px;display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:4px}
   .cta-email:hover{color:var(--accent)}
 
   /* FOOTER */
   footer{padding:56px 0 44px;font-size:13.5px;color:var(--muted);background:var(--bg)}
   .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px}
-  .foot-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--accent-deep);margin-bottom:6px;font-weight:500}
-  .foot-tag{color:var(--muted);font-size:13px;font-family:'Cormorant Garamond',serif;font-style:italic}
-  .foot-meta{text-align:right;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted)}
+  .foot-brand{font-family:'Young Serif',serif;font-size:24px;color:var(--accent);margin-bottom:8px;font-weight:700;display:flex;align-items:center;gap:10px}
+  .foot-ball{width:16px;height:16px;border-radius:50%;background:var(--accent);position:relative;flex:none}
+  .foot-ball::after{content:"";position:absolute;top:22%;left:22%;width:22%;height:22%;border-radius:50%;background:var(--bg)}
+  .foot-brand .cre{color:var(--ink)}
+  .foot-tag{color:var(--muted);font-size:13px;font-family:'Inter',sans-serif}
+  .foot-meta{text-align:right;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
 
   /* Scroll reveal */
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
@@ -174,8 +188,8 @@
     .wrap{padding:0 22px}
     .wt-grid{grid-template-columns:1fr}
     .product{padding:26px 24px}
-    .product-num{top:20px;right:22px;width:28px;height:28px;font-size:15px}
-    .product h3{font-size:26px;padding-right:36px}
+    .product-num{top:20px;right:22px;width:30px;height:30px;font-size:15px}
+    .product h3{font-size:25px;padding-right:36px}
   }
 </style>
 </head>
@@ -185,8 +199,12 @@
 
 <nav aria-label="Primary">
   <div class="wrap row">
-    <a href="/" class="logo">
-      <span>cre</span><span class="dot">·</span><span>ai</span><span class="dot">·</span><span>team</span>
+    <a href="/" class="logo" aria-label="Curbside CRE — home">
+      <span class="logo-ball" aria-hidden="true"></span>
+      <span class="logo-lockup">
+        <span class="logo-word">Curbside</span>
+        <span class="logo-curb"><span class="logo-line"></span><span class="logo-cre">CRE</span></span>
+      </span>
       <span class="tag">Software for modern CRE</span>
     </a>
     <div class="nav-links">
@@ -345,7 +363,7 @@
   <div class="wrap cta-inner">
     <h2>Begin a <em>quiet conversation.</em></h2>
     <p>Thirty minutes with a software engineer who's built these tools with brokerages like yours. No deck. No pitch. Just a real conversation about where the hours are going on your deals.</p>
-    <a class="btn btn-primary" href="mailto:hello@cre-team.com?subject=Talk%20to%20an%20engineer%20—%20cre-team.com" style="padding:16px 32px;font-size:15px">Email hello@cre-team.com →</a>
+    <a class="btn btn-primary" href="mailto:hello@cre-team.com?subject=Talk%20to%20an%20engineer%20—%20Curbside%20CRE" style="padding:16px 32px;font-size:15px">Email hello@cre-team.com →</a>
     <p style="margin-top:32px"><a class="cta-email" href="mailto:hello@cre-team.com">hello@cre-team.com</a></p>
   </div>
 </section>
@@ -355,11 +373,11 @@
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <p class="foot-brand">cre · ai · team</p>
+      <p class="foot-brand"><span class="foot-ball" aria-hidden="true"></span>Curbside <span class="cre">CRE</span></p>
       <p class="foot-tag">Built with brokers, for brokers.</p>
     </div>
     <div class="foot-meta">
-      <p>© 2026 cre-team</p>
+      <p>© 2026 Curbside CRE</p>
       <p><a href="mailto:hello@cre-team.com">hello@cre-team.com</a></p>
     </div>
   </div>
