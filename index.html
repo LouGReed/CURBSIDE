@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Curbside CRE — AI tools built by brokers, for brokers</title>
-<meta name="description" content="AI tools built by brokers, for brokers. A small team of software engineers and CRE brokers leveraging AI. For modern CRE, who like their software faster, cheaper and easier. ">
+<title>Curbside CRE — ChatGPT advertising for commercial brokerages</title>
+<meta name="description" content="Your next client is asking an AI who to call. Be the answer. Custom ChatGPT ad campaigns for commercial brokerages — setup fees half off through Labor Day.">
 <meta name="theme-color" content="#2B2A28">
 <link rel="canonical" href="https://curbside-cre.com/">
 
 <!-- Open Graph / social -->
-<meta property="og:title" content="Curbside CRE — AI tools built by brokers, for brokers">
-<meta property="og:description" content="A small team of software engineers and CRE brokers leveraging AI. Built with brokerages working office, industrial, retail, and medical.">
+<meta property="og:title" content="Curbside CRE — ChatGPT advertising for commercial brokerages">
+<meta property="og:description" content="Your next client is asking an AI who to call. Be the answer. Custom ChatGPT ad campaigns for CRE brokerages — setup fees half off through Labor Day.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://curbside-cre.com/">
 <meta property="og:site_name" content="Curbside CRE">
 <meta name="twitter:card" content="summary_large_image">
+<!-- og:image intentionally omitted — no 1200x630 social card supplied yet -->
 
 <!-- Favicon: coral ball -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FBF6EF'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%23FF6242'/%3E%3Ccircle cx='25' cy='25' r='3.6' fill='%23FBF6EF'/%3E%3C/svg%3E">
@@ -81,81 +82,82 @@
   .hero{padding:96px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
   .hero::after{content:"";position:absolute;top:55%;right:-180px;width:520px;height:520px;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 65%);opacity:.6;pointer-events:none}
   .eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
-  h1{font-family:'Young Serif',serif;font-size:clamp(40px,6vw,76px);line-height:1.04;letter-spacing:-.005em;font-weight:400;max-width:980px;margin-bottom:28px;color:var(--ink);position:relative;z-index:1}
+  h1{font-family:'Young Serif',serif;font-size:clamp(38px,5.6vw,72px);line-height:1.06;letter-spacing:-.005em;font-weight:400;max-width:980px;margin-bottom:28px;color:var(--ink);position:relative;z-index:1}
   h1 em{font-style:normal;color:var(--accent-deep)}
-  .lede{font-family:'Inter',sans-serif;font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:760px;margin-bottom:40px;line-height:1.5;position:relative;z-index:1}
+  .lede{font-family:'Inter',sans-serif;font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:720px;margin-bottom:40px;line-height:1.5;position:relative;z-index:1}
   .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
 
-  /* PREMISE BAND */
-  .band{padding:88px 0;background:var(--paper);border-bottom:1px solid var(--line)}
-  .band-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:88px;align-items:start}
-  .band-label{font-family:'Young Serif',serif;font-size:30px;color:var(--accent-deep);font-weight:400;line-height:1.12}
-  .band-label::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--ink);margin-bottom:20px}
-  .band-body p{font-size:17px;line-height:1.75;color:var(--ink-soft);margin-bottom:18px}
-  .band-body p:last-child{margin-bottom:0}
-  .band-body p:first-child::first-letter{font-family:'Young Serif',serif;font-size:62px;float:left;line-height:.82;padding:8px 14px 0 0;color:var(--accent);font-weight:400}
-
-  /* PRODUCTS SECTION */
+  /* SECTION SCAFFOLD */
   .section{padding:96px 0;border-bottom:1px solid var(--line)}
   .section-eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);margin-bottom:18px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
-  .section-title{font-family:'Young Serif',serif;font-size:clamp(30px,4.2vw,48px);letter-spacing:-.005em;font-weight:400;max-width:780px;line-height:1.08;margin-bottom:64px}
+  .section-title{font-family:'Young Serif',serif;font-size:clamp(30px,4.2vw,48px);letter-spacing:-.005em;font-weight:400;max-width:820px;line-height:1.08;margin-bottom:56px}
   .section-title em{font-style:normal;color:var(--accent-deep)}
 
-  .products{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  .product{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:32px 36px;position:relative;transition:border-color .2s, transform .2s}
-  .product:hover{border-color:var(--accent);transform:translateY(-2px)}
-  .product-num{position:absolute;top:24px;right:28px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',serif;font-size:17px;font-weight:400}
-  .product h3{font-family:'Young Serif',serif;font-size:29px;font-weight:400;letter-spacing:-.005em;line-height:1.12;color:var(--ink);margin-bottom:10px;padding-right:48px}
-  .product-tag{font-family:'Inter',sans-serif;font-size:11px;color:var(--accent-deep);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
-  .product p{font-size:15px;color:var(--ink-soft);line-height:1.65}
-  .product .builtwith{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-family:'Young Serif',serif;font-size:14px;color:var(--accent-deep)}
+  /* PROOF BLOCK (§2.3) */
+  .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .proof-shot{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper);box-shadow:0 20px 44px -26px rgba(43,42,40,.4)}
+  .proof-query{font-family:'Young Serif',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.4vw,28px);line-height:1.3;letter-spacing:-.005em;color:var(--ink);margin:6px 0 4px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px}
+  .chip{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);border:1px solid var(--line-2);border-radius:999px;padding:8px 16px;line-height:1}
+  .dark-card{background:var(--dark-bg);color:var(--dark-text);border-radius:10px;padding:28px}
+  .dark-card h3{font-family:'Young Serif',serif;font-weight:400;font-size:clamp(21px,2.2vw,25px);line-height:1.18;letter-spacing:-.005em;margin-bottom:12px}
+  .dark-card h3 em{font-style:normal;color:var(--accent)}
+  .dark-card p{font-size:15px;color:var(--dark-muted);line-height:1.6}
 
-  /* WATCHTOWER — dark band */
-  .watchtower{padding:88px 0;background:var(--dark-bg);color:var(--dark-text);position:relative;border-bottom:1px solid var(--line)}
-  .watchtower .section-eyebrow{color:var(--accent)}
-  .wt-head{display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start;margin-bottom:36px}
-  .wt-num{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Young Serif',serif;font-size:22px;font-weight:400;flex-shrink:0;position:relative}
-  .wt-num::after{content:"";position:absolute;top:11px;left:13px;width:7px;height:7px;border-radius:50%;background:var(--dark-bg)}
-  .wt-title{font-family:'Young Serif',serif;font-size:clamp(34px,4.2vw,50px);font-weight:400;letter-spacing:-.005em;line-height:1.08;color:var(--dark-text);margin-bottom:10px}
-  .wt-subtitle{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:18px}
-  .wt-body{font-size:17px;line-height:1.7;color:var(--dark-text);max-width:820px;margin-bottom:48px;margin-left:88px}
-  .wt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 56px;margin-left:88px;max-width:1000px}
-  .wt-item{position:relative;padding-left:20px}
-  .wt-item::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
-  .wt-item h4{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-text);font-weight:600;margin-bottom:6px}
-  .wt-item p{font-size:14px;color:var(--dark-muted);line-height:1.55}
+  /* CHANNEL COMPARISON (§2.4) */
+  .channels{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .channel{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:28px}
+  .channel.dark{background:var(--dark-bg);border-color:var(--dark-bg);color:var(--dark-text)}
+  .channel-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .channel-head h3{font-family:'Young Serif',serif;font-weight:400;font-size:22px;color:var(--ink)}
+  .channel.dark .channel-head h3{color:var(--dark-text)}
+  .glyph{flex:none;color:var(--ink)}
+  .channel.dark .glyph{color:var(--accent)}
+  .channel p{font-size:15px;color:var(--ink-soft);line-height:1.6}
+  .channel.dark p{color:var(--dark-muted)}
 
-  /* SOCIAL PROOF / BUILT WITH */
-  .builtwith-band{padding:80px 0;border-bottom:1px solid var(--line);background:var(--bg-2)}
-  .bw-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:center}
-  .bw-quote{font-family:'Young Serif',serif;font-size:clamp(26px,3vw,38px);line-height:1.22;letter-spacing:-.005em;color:var(--ink);font-weight:400}
-  .bw-quote em{color:var(--accent-deep);font-style:normal}
-  .bw-meta{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);margin-top:24px;letter-spacing:.04em;line-height:1.6}
-  .bw-meta strong{color:var(--ink);font-weight:600}
-  .bw-territory{padding:32px;background:var(--paper);border:1px solid var(--line);border-radius:8px}
-  .bw-territory h5{font-family:'Young Serif',serif;font-size:22px;color:var(--accent-deep);margin-bottom:14px;font-weight:400}
-  .bw-territory p{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:14px}
-  .bw-territory p:last-child{margin-bottom:0}
-  .bw-territory strong{color:var(--ink);font-weight:600}
+  /* OFFER (§2.5) */
+  .offer-panel{border:1px solid var(--accent);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:1fr 2fr}
+  .offer-left{background:rgba(255,98,66,.08);padding:44px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .offer-halfoff{font-family:'Young Serif',serif;font-weight:400;font-size:clamp(40px,6vw,52px);color:var(--accent-deep);line-height:1}
+  .offer-setup{font-family:'Young Serif',serif;font-weight:400;font-size:26px;color:var(--ink);line-height:1.1;margin-top:2px}
+  .offer-through{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-top:16px}
+  .countdown{font-family:'Inter',sans-serif;font-variant-numeric:tabular-nums;color:var(--accent-deep);font-size:13px;letter-spacing:.08em;margin-top:10px;min-height:1.1em}
+  .offer-closed{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);line-height:1.5;margin-top:8px;max-width:34ch}
+  .offer-scaling{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);line-height:1.5;margin-top:18px;max-width:30ch}
+  .offer-right{padding:8px 36px}
+  .offer-row{padding:22px 0;border-bottom:1px solid var(--line)}
+  .offer-row:last-child{border-bottom:none}
+  .offer-row h3{font-family:'Young Serif',serif;font-weight:400;font-size:19px;color:var(--ink);margin-bottom:6px}
+  .offer-row p{font-size:15px;color:var(--ink-soft);line-height:1.55}
 
-  /* HOW WE WORK */
-  .how{padding:96px 0;background:var(--paper);border-bottom:1px solid var(--line)}
-  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:48px}
-  .how-step{padding-top:22px;border-top:4px solid var(--ink);position:relative}
-  .how-num{font-family:'Young Serif',serif;font-size:16px;color:var(--accent-deep);margin-bottom:10px;font-weight:400}
-  .how-step h4{font-family:'Young Serif',serif;font-size:25px;letter-spacing:-.005em;margin-bottom:12px;font-weight:400;color:var(--ink)}
-  .how-step h4 em{font-style:normal;color:var(--accent-deep)}
-  .how-step p{font-size:15px;color:var(--muted);line-height:1.7}
+  /* WHY NOW (§2.7) */
+  .whynow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .whynow-item{border-top:1px solid var(--line-2);padding-top:20px}
+  .whynow-item h3{font-family:'Young Serif',serif;font-weight:400;font-size:19px;color:var(--ink);margin-bottom:10px}
+  .whynow-item p{font-size:15px;color:var(--muted);line-height:1.65}
 
-  /* CTA */
+  /* ARGUMENT BAND (§2.8) */
+  .argument{padding:88px 0;background:var(--bg-2);border-bottom:1px solid var(--line)}
+  .argument-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+  .argument h2{font-family:'Young Serif',serif;font-weight:400;font-size:clamp(26px,3vw,32px);line-height:1.2;letter-spacing:-.005em;color:var(--ink)}
+  .argument h2 em{font-style:normal;color:var(--accent-deep)}
+  .argument-body{font-size:17px;color:var(--ink-soft);line-height:1.7}
+
+  /* SUITE STRIP (§2.9) */
+  .suite{padding:64px 0;border-bottom:1px solid var(--line);background:var(--paper)}
+  .suite-line{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+  .suite-chip{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+  .suite-note{font-size:15px;color:var(--ink-soft);line-height:1.65;max-width:72ch}
+  .suite-note strong{color:var(--ink);font-weight:600}
+
+  /* CLOSING CTA (§2.10) */
   .cta{padding:128px 0;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
   .cta::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:780px;height:380px;background:radial-gradient(ellipse,var(--accent-soft) 0%,transparent 65%);pointer-events:none;opacity:.65}
   .cta-inner{position:relative;z-index:1}
-  .cta h2{font-family:'Young Serif',serif;font-size:clamp(34px,5vw,62px);letter-spacing:-.008em;font-weight:400;margin-bottom:20px;line-height:1.04}
+  .cta h2{font-family:'Young Serif',serif;font-size:clamp(32px,4.6vw,58px);letter-spacing:-.008em;font-weight:400;margin-bottom:20px;line-height:1.06;max-width:900px;margin-left:auto;margin-right:auto}
   .cta h2 em{color:var(--accent-deep);font-style:normal}
-  .cta p{font-size:18px;color:var(--muted);margin-bottom:40px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.55}
-  .cta-email{font-family:'Young Serif',serif;font-size:22px;color:var(--accent-deep);margin-top:24px;display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:4px}
-  .cta-email:hover{color:var(--accent)}
+  .cta p{font-size:18px;color:var(--muted);margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.55}
 
   /* FOOTER */
   footer{padding:56px 0 44px;font-size:13.5px;color:var(--muted);background:var(--bg)}
@@ -166,6 +168,7 @@
   .foot-brand .cre{color:var(--ink)}
   .foot-tag{color:var(--muted);font-size:13px;font-family:'Inter',sans-serif}
   .foot-meta{text-align:right;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
+  .foot-date{margin-top:6px}
 
   /* Scroll reveal */
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
@@ -176,22 +179,22 @@
   @media(max-width:900px){
     .nav-links a:not(.btn){display:none}
     .logo .tag{display:none}
-    .band-grid,.products,.bw-grid,.how-grid{grid-template-columns:1fr;gap:32px}
-    .wt-head{grid-template-columns:48px 1fr;gap:18px}
-    .wt-body,.wt-grid{margin-left:0}
-    .wt-grid{grid-template-columns:repeat(2,1fr);gap:24px 32px}
-    .section,.watchtower,.builtwith-band,.how,.band{padding:64px 0}
+    .proof-grid,.channels,.whynow-grid,.argument-grid{grid-template-columns:1fr;gap:32px}
+    .offer-panel{grid-template-columns:1fr}
+    .offer-left{padding:40px 28px}
+    .offer-right{padding:0 28px}
+    .section,.argument,.suite{padding:64px 0}
     .hero{padding:64px 0 56px}
     .cta{padding:88px 0}
   }
   @media(max-width:560px){
     .wrap{padding:0 22px}
-    .wt-grid{grid-template-columns:1fr}
-    .product{padding:26px 24px}
-    .product-num{top:20px;right:22px;width:30px;height:30px;font-size:15px}
-    .product h3{font-size:25px;padding-right:36px}
+    .channel,.dark-card{padding:24px}
+    .offer-left{padding:36px 22px}
+    .offer-right{padding:0 22px}
   }
 </style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
@@ -205,166 +208,172 @@
         <span class="logo-word">Curbside</span>
         <span class="logo-curb"><span class="logo-line"></span><span class="logo-cre">CRE</span></span>
       </span>
-      <span class="tag">Software for modern CRE</span>
+      <span class="tag">ChatGPT advertising for commercial brokerages</span>
     </a>
     <div class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#watchtower">Watchtower</a>
-      <a href="#builtwith">Built with</a>
-      <a class="btn btn-ghost" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Talk to an engineer →</a>
+      <a href="#how">How it works</a>
+      <a href="#offer">The offer</a>
+      <a class="btn btn-ghost" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Pick your territory →</a>
     </div>
   </div>
 </nav>
 
 <main id="main">
 
+<!-- §2.2 HERO -->
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow reveal">Solutions engineering for commercial real estate</p>
-    <h1 class="reveal">AI tools built <em>by brokers, for brokers.</em></h1>
-    <p class="lede reveal">Built by a small team of software engineers and CRE brokers leveraging AI. We build dealflow and leasing tools to make your work faster, cheaper, and easier.</p>
+    <p class="eyebrow reveal">ChatGPT advertising for commercial brokerages</p>
+    <h1 class="reveal">Your next client is asking an&nbsp;AI<br>who they should call. <em>Be the answer.</em></h1>
+    <p class="lede reveal">Every dollar going into data and tooling makes your brokers faster. It doesn't make the phone ring.</p>
     <div class="cta-row reveal">
-      <a class="btn btn-primary" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Book a call with an engineer →</a>
-      <a class="btn btn-ghost" href="#products">See the products</a>
+      <a class="btn btn-primary" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Pick your territory →</a>
+      <a class="btn btn-ghost" href="#offer">See the offer</a>
     </div>
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap band-grid">
-    <p class="band-label reveal">What we do for CRE brokerages</p>
-    <div class="band-body reveal">
-      <p>You don't need another generic CRM. You need edge on the parts of the deal that quietly eat your week: putting together investor decks, running tours, tracking lease dates, watching the market, and showing your value when nothing's moving.</p>
-      <p>Each product below replaces something you're already doing by hand with one built around how your brokerage actually runs.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="products">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">— the product suite</p>
-    <h2 class="section-title reveal">Four tools your brokers <em>open every day.</em></h2>
-
-    <div class="products">
-
-      <article class="product reveal">
-        <span class="product-num">1</span>
-        <h3>Deck Smart</h3>
-        <p class="product-tag">Investor decks, in days not weeks</p>
-        <p>Turn the weeks-long slog of putting together an investor deck into a few guided days. Share the site, the specifics, the story, and your brand colors. We handle the editing, formatting, color, and layout. Reclaim tens of hours and spend them where they matter: sharpening the pitch and getting stakeholders aligned.</p>
-      </article>
-
-      <article class="product reveal">
-        <span class="product-num">2</span>
-        <h3>Tour Guide</h3>
-        <p class="product-tag">Match, tour, close — on the leasing side</p>
-        <p>Pulls your book and your CRM together, then matches tenants to the right properties on the spot. Produces a touring packet on your letterhead, maps the tour for convenience, and lays out the factors that close the deal for tenants weighing high-stakes leasing decisions.</p>
-      </article>
-
-      <article class="product reveal">
-        <span class="product-num">3</span>
-        <h3>It Won't Move</h3>
-        <p class="product-tag">Demonstrate value when the market doesn't</p>
-        <p>Pulls exposure, inquiries, showings, outreach, and the qualified names still in the pipeline straight from your CRM and shows it as a clean one-page deal funnel. Even in market downturns, so brokers can show owners exactly what's happening, what's next, and where the real movement is hiding.</p>
-        <p class="builtwith">Built for the stretches when listings aren't moving.</p>
-      </article>
-
-      <article class="product reveal">
-        <span class="product-num">4</span>
-        <h3>Tenant HQ</h3>
-        <p class="product-tag">Never lose a renegotiation window again</p>
-        <p>Renegotiation windows are often just 30 days — across a full book, those windows quietly disappear and so does the margin. Tenant HQ puts every critical date on one calendar, so you walk in earlier and better prepared than anyone else at the table.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<section class="watchtower" id="watchtower">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">— the fifth product</p>
-    <div class="wt-head reveal">
-      <span class="wt-num">5</span>
-      <div>
-        <h2 class="wt-title">Watchtower</h2>
-        <p class="wt-subtitle">The sword in the stone — market intel for the brokerages working your territory</p>
-      </div>
-    </div>
-    <p class="wt-body reveal">Eyes on every filing, listing, sale, and ownership change in your territory — parish, ZIP, or submarket. A small set of watchers pulls the data your team would never have time to chase, so you know what's changed before anyone else does.</p>
-    <div class="wt-grid reveal">
-      <div class="wt-item">
-        <h4>Permits</h4>
-        <p>Pulls new filings the day they post.</p>
-      </div>
-      <div class="wt-item">
-        <h4>Expireds</h4>
-        <p>Reports every expired listing in territory.</p>
-      </div>
-      <div class="wt-item">
-        <h4>New Listings</h4>
-        <p>Surfaces inventory the moment it hits market.</p>
-      </div>
-      <div class="wt-item">
-        <h4>Solds</h4>
-        <p>Logs the day's closed transactions.</p>
-      </div>
-      <div class="wt-item">
-        <h4>White Pages</h4>
-        <p>Up to the daily cap — contacts, portfolios, last buy.</p>
-      </div>
-      <div class="wt-item">
-        <h4>Ownership</h4>
-        <p>Names the principal behind every LLC.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="builtwith-band" id="builtwith">
-  <div class="wrap bw-grid">
+<!-- §2.3 PROOF BLOCK -->
+<section class="section" id="proof">
+  <div class="wrap proof-grid">
     <div class="reveal">
-      <p class="section-eyebrow">— built with brokers</p>
-      <p class="bw-quote">Designed in residency with the brokerages and operators running deals — including <em>JLL</em>, and the operators carrying hundreds of leases at once.</p>
-      <p class="bw-meta"><strong>Design partners.</strong> Brokerages working office, industrial, retail, and medical, on both sales and leasing side.</p>
+      <img class="proof-shot" src="assets/chatgpt-answer-austin.png" width="1192" height="794" loading="eager" decoding="async"
+           alt="ChatGPT answering a tenant's question about opening an Austin branch, naming five commercial brokerages including Cresa and Colliers.">
     </div>
-    <div class="bw-territory reveal">
-      <h5>Your territory</h5>
-      <p><strong>Wherever your brokerage runs deals.</strong> Watchtower configures to whatever geography your brokers actually work — parish, ZIP, submarket, county, or MSA.</p>
-      <p><strong>However your brokerage is structured.</strong> Office, industrial, retail, medical. Sales side or leasing side. The tooling adapts to how you work — not the other way around.</p>
+    <div class="reveal">
+      <p class="section-eyebrow">We asked. Here's who it named.</p>
+      <p class="proof-query">"We're opening up a branch in Austin. We want lots of light, 10-20,000 square feet, and central location. Who should we call?"</p>
+      <div class="chips">
+        <span class="chip">Cresa</span>
+        <span class="chip">Colliers</span>
+        <span class="chip">HPI Real Estate</span>
+        <span class="chip">Austin Tenant Advisors</span>
+        <span class="chip">ECR</span>
+      </div>
+      <div class="dark-card">
+        <h3>Be the first call, <em>right when your client is looking for you.</em></h3>
+        <p>Nobody paid for that placement — which is exactly why it's still available.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="how">
+<!-- §2.4 CHANNEL COMPARISON -->
+<section class="section" id="how">
   <div class="wrap">
-    <p class="section-eyebrow reveal">— how we work</p>
-    <h2 class="section-title reveal">Three steps. <em>No platform to learn.</em></h2>
-    <div class="how-grid">
-      <div class="how-step reveal">
-        <p class="how-num">i.</p>
-        <h4>Talk to a software engineer</h4>
-        <p>Thirty minutes with someone who has actually built these tools — not a sales call. Tell us exactly what's costing you time and money, and only pay for the solutions you'll actually use.</p>
+    <p class="section-eyebrow reveal">— where attention actually is</p>
+    <h2 class="section-title reveal">Every other channel talks past the moment. <em>ChatGPT is the moment.</em></h2>
+    <div class="channels">
+      <article class="channel reveal">
+        <div class="channel-head">
+          <svg class="glyph" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12c0-3 1.8-5 4-5s3.1 2 4 5 1.8 5 4 5 4-2 4-5-1.8-5-4-5-3.1 2-4 5-1.8 5-4 5-4-2-4-5z"/></svg>
+          <h3>Meta</h3>
+        </div>
+        <p>Interruption. Someone scrolling, who wasn't thinking about real estate.</p>
+      </article>
+      <article class="channel reveal">
+        <div class="channel-head">
+          <svg class="glyph" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.5 12a8.5 8.5 0 1 1-3.2-6.6"/><path d="M20.5 12h-6.2" stroke-linecap="round"/></svg>
+          <h3>Google</h3>
+        </div>
+        <p>Three keywords, ten blue links, four competitors bidding the same words.</p>
+      </article>
+      <article class="channel dark reveal">
+        <div class="channel-head">
+          <svg class="glyph" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7.4 4.3v8.6L12 21l-7.4-4.3V7.3L12 3z"/><path d="M12 3v9l7.4 4.3M12 12L4.6 16.3" stroke-width="1.1"/></svg>
+          <h3>ChatGPT</h3>
+        </div>
+        <p>The whole situation, in paragraphs — then they asked what to do.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- §2.5 THE OFFER -->
+<section class="section" id="offer">
+  <div class="wrap">
+    <p class="section-eyebrow reveal">— the Labor Day offer</p>
+    <h2 class="section-title reveal">A campaign built around <em>your</em> markets.</h2>
+    <div class="offer-panel reveal">
+      <div class="offer-left">
+        <div id="offer-discount">
+          <p class="offer-halfoff serif">Half off</p>
+          <p class="offer-setup serif">setup fees</p>
+          <p class="offer-through">Through Labor Day · Sept 7</p>
+        </div>
+        <p class="countdown" id="countdown" aria-live="off" aria-label="Offer ends end of day Monday, September 7, 2026, Central time"></p>
+        <p class="offer-closed" id="offer-closed" hidden>Setup discount closed — ask what pricing looks like for your brokerage.</p>
+        <p class="offer-scaling">Pricing scales to your brokerage — we'll size it on the call.</p>
       </div>
-      <div class="how-step reveal">
-        <p class="how-num">ii.</p>
-        <h4>Customize to fit within <em>your</em> team</h4>
-        <p>We tailor the tool to your CRM, your book, your letterhead, and the way your brokers already work. No new platform to learn: the product adapts to your brokerage, not the other way around.</p>
-      </div>
-      <div class="how-step reveal">
-        <p class="how-num">iii.</p>
-        <h4>Roll out with full training and support</h4>
-        <p>We deploy the tool, train your team, and stay with you for ongoing support. Most brokerages we work with are running two or three of the five within ninety days.</p>
+      <div class="offer-right">
+        <div class="offer-row">
+          <h3>Custom build</h3>
+          <p>Campaign designed around your markets, your voice and the deals you actually win.</p>
+        </div>
+        <div class="offer-row">
+          <h3>3 prompt types</h3>
+          <p>Beta-tested against live queries to find which ones your buyers actually ask.</p>
+        </div>
+        <div class="offer-row">
+          <h3>ROAS tuned</h3>
+          <p>Optimized through your first month.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- §2.7 WHY THIS CHANNEL, RIGHT NOW -->
+<section class="section">
+  <div class="wrap">
+    <p class="section-eyebrow reveal">— why this channel, right now</p>
+    <h2 class="section-title reveal">A window, <em>not a permanent condition.</em></h2>
+    <div class="whynow-grid">
+      <div class="whynow-item reveal">
+        <h3>No minimum</h3>
+        <p>Totally scalable spend. Start at any budget, move it any week, stop whenever.</p>
+      </div>
+      <div class="whynow-item reveal">
+        <h3>Highest intent</h3>
+        <p>They described the whole problem, then asked for a recommendation. Nothing else on the market sits that close to the decision.</p>
+      </div>
+      <div class="whynow-item reveal">
+        <h3>Thin auction</h3>
+        <p>Clicks are cheap because almost nobody is bidding yet. That is a window, not a permanent condition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §2.8 ARGUMENT BAND -->
+<section class="argument">
+  <div class="wrap argument-grid">
+    <h2 class="reveal">You're already spending on engineering. <em>The revenue side has to scale with it.</em></h2>
+    <p class="argument-body reveal">That investment turns into ROI only when the client side grows with it — efficiency without demand is just a faster cost center.</p>
+  </div>
+</section>
+
+<!-- §2.9 THE SUITE, DEMOTED -->
+<section class="suite">
+  <div class="wrap">
+    <p class="section-eyebrow reveal">— we also build</p>
+    <div class="suite-line reveal">
+      <span class="suite-chip">Deck Smart</span>
+      <span class="suite-chip">Tour Guide</span>
+      <span class="suite-chip">It Won't Move</span>
+      <span class="suite-chip">Tenant HQ</span>
+      <span class="suite-chip">Watchtower</span>
+    </div>
+    <p class="suite-note reveal">AI tools built by brokers, for brokers — in use at brokerages working office, industrial, retail, and medical. Designed in residency with the teams running deals, including <strong>JLL</strong>.</p>
+  </div>
+</section>
+
+<!-- §2.10 CLOSING CTA -->
 <section class="cta" id="contact">
   <div class="wrap cta-inner">
-    <h2>Begin a <em>quiet conversation.</em></h2>
-    <p>Thirty minutes with a software engineer who's built these tools with brokerages like yours. No deck. No pitch. Just a real conversation about where the hours are going on your deals.</p>
-    <a class="btn btn-primary" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener" style="padding:16px 32px;font-size:15px">Book a call with an engineer →</a>
-    <p style="margin-top:32px"><a class="cta-email" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">See available times →</a></p>
+    <h2 class="reveal">Thirty minutes and we'll pull your submarket live. <em>Let's pick the territory.</em></h2>
+    <p class="reveal">No deck, no pitch — just your market on the screen and a look at what's already being asked.</p>
+    <a class="btn btn-primary reveal" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener" style="padding:16px 32px;font-size:15px">Pick your territory →</a>
   </div>
 </section>
 
@@ -378,12 +387,13 @@
     </div>
     <div class="foot-meta">
       <p>© 2026 Curbside CRE</p>
-      <p><a href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Book a call →</a></p>
+      <p class="foot-date" id="foot-date">Offer ends Monday, September 7, 2026</p>
     </div>
   </div>
 </footer>
 
 <script>
+  /* Scroll reveal (unchanged) */
   (function(){
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
@@ -398,6 +408,57 @@
       });
     }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  })();
+
+  /* Offer countdown */
+  (function(){
+    // ── SINGLE SOURCE OF TRUTH FOR THE OFFER DEADLINE ────────────────────
+    // End of day Monday, September 7, 2026, America/Chicago = 2026-09-08T05:00:00Z.
+    // Hardcoded as a UTC instant so the countdown is correct in every timezone.
+    // WHEN THE OFFER DATE MOVES: change this one line, then update the two
+    // human-readable strings that must match it — the "Sept 7" in the offer
+    // block (.offer-through) and the footer fallback text (#foot-date).
+    var DEADLINE = Date.parse('2026-09-08T05:00:00Z');
+
+    var elCountdown = document.getElementById('countdown');
+    var elDiscount  = document.getElementById('offer-discount');
+    var elClosed    = document.getElementById('offer-closed');
+    var elFootDate  = document.getElementById('foot-date');
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+
+    function render(){
+      var diff = DEADLINE - Date.now();
+      if (diff <= 0){
+        // Post-deadline: the section must still read as an offer block.
+        if (elDiscount)  elDiscount.hidden  = true;
+        if (elCountdown) elCountdown.hidden = true;
+        if (elClosed)    elClosed.hidden    = false;
+        return false; // stop ticking
+      }
+      var s = Math.floor(diff/1000);
+      var days = Math.floor(s/86400); s -= days*86400;
+      var h = Math.floor(s/3600);     s -= h*3600;
+      var m = Math.floor(s/60);       s -= m*60;
+      if (elCountdown){
+        elCountdown.textContent = days + (days===1 ? ' day' : ' days') + ' · ' + pad(h)+':'+pad(m)+':'+pad(s);
+      }
+      return true;
+    }
+
+    // Footer date derived from the same constant (static text stays as JS-off fallback).
+    if (elFootDate){
+      try {
+        var last = new Date(DEADLINE - 1); // 23:59:59 on the offer's final day, Central
+        elFootDate.textContent = 'Offer ends ' + new Intl.DateTimeFormat('en-US', {
+          weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'America/Chicago'
+        }).format(last);
+      } catch(e){ /* keep the static fallback already in the HTML */ }
+    }
+
+    if (render()){
+      var timer = setInterval(function(){ if(!render()) clearInterval(timer); }, 1000);
+    }
   })();
 </script>
 
