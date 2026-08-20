@@ -58,8 +58,19 @@
   @media(prefers-reduced-motion:reduce){.logo-ball{animation:none!important}}
 
   /* NAV */
-  nav{padding:16px 0;border-bottom:1px solid var(--line);background:rgba(251,246,239,.92);position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(8px)}
-  nav .row{display:flex;align-items:center;justify-content:space-between}
+  nav{padding:16px 0;border-bottom:1px solid transparent;background:transparent;position:sticky;top:0;z-index:20;transition:background .35s ease,border-color .35s ease,backdrop-filter .35s ease}
+  nav::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,18,.5),transparent);pointer-events:none;transition:opacity .35s ease;opacity:1}
+  nav.nav--solid{background:rgba(251,246,239,.92);border-bottom-color:var(--line);backdrop-filter:saturate(140%) blur(8px)}
+  nav.nav--solid::before{opacity:0}
+  nav .row{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+  /* light treatment while over the hero video */
+  nav:not(.nav--solid) .logo-line{background:#FBF6EF}
+  nav:not(.nav--solid) .logo-cre{color:#FBF6EF}
+  nav:not(.nav--solid) .tag{color:rgba(251,246,239,.82);border-left-color:rgba(251,246,239,.32)}
+  nav:not(.nav--solid) .nav-links a:not(.btn){color:rgba(251,246,239,.88)}
+  nav:not(.nav--solid) .nav-links a:not(.btn):hover{color:#fff}
+  nav:not(.nav--solid) .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.06)}
+  nav:not(.nav--solid) .btn-ghost:hover{background:rgba(255,255,255,.16);border-color:#fff}
   .logo{display:flex;align-items:center;gap:15px}
   .logo-ball{width:24px;height:24px;border-radius:50%;background:var(--accent);position:relative;flex:none;animation:roll 9s linear infinite}
   .logo-ball::after{content:"";position:absolute;top:22%;left:22%;width:22%;height:22%;border-radius:50%;background:var(--bg)}
@@ -78,14 +89,28 @@
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
   .btn-ghost:hover{background:var(--paper);border-color:var(--ink)}
 
-  /* HERO */
-  .hero{padding:96px 0 88px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;top:55%;right:-180px;width:520px;height:520px;background:radial-gradient(circle,var(--accent-soft) 0%,transparent 65%);opacity:.6;pointer-events:none}
+  /* HERO — full-bleed video */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:96px 0 clamp(60px,10vh,112px);margin-top:-73px;overflow:hidden;border-bottom:none}
+  .hero-media{position:absolute;inset:0;z-index:0}
+  .hero-video{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,18,.42) 0%,rgba(20,19,18,.20) 34%,rgba(20,19,18,.55) 78%,rgba(20,19,18,.82) 100%)}
+  .hero-content{position:relative;z-index:1}
   .eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
-  h1{font-family:'Young Serif',serif;font-size:clamp(38px,5.6vw,72px);line-height:1.06;letter-spacing:-.005em;font-weight:400;max-width:980px;margin-bottom:28px;color:var(--ink);position:relative;z-index:1}
+  h1{font-family:'Young Serif',serif;font-size:clamp(38px,4.8vw,66px);line-height:1.06;letter-spacing:-.008em;font-weight:400;max-width:960px;margin-bottom:24px;color:var(--ink);position:relative;z-index:1}
   h1 em{font-style:normal;color:var(--accent-deep)}
-  .lede{font-family:'Inter',sans-serif;font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:720px;margin-bottom:40px;line-height:1.5;position:relative;z-index:1}
+  .lede{font-family:'Inter',sans-serif;font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:660px;margin-bottom:40px;line-height:1.5;position:relative;z-index:1}
   .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
+  /* hero over dark video */
+  .hero .eyebrow{color:#fff;opacity:.92;text-shadow:0 1px 20px rgba(0,0,0,.4)}
+  .hero h1{color:#FBF6EF;text-shadow:0 2px 34px rgba(0,0,0,.4)}
+  .hero h1 em{color:var(--accent)}
+  .hero .lede{color:rgba(251,246,239,.9);text-shadow:0 1px 22px rgba(0,0,0,.45)}
+  .hero .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+  .hero .btn-ghost:hover{background:rgba(255,255,255,.16);border-color:#fff}
+  .scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:1;color:rgba(251,246,239,.7);font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(rgba(251,246,239,.7),transparent);animation:cue 2.2s ease-in-out infinite}
+  @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+  @media(prefers-reduced-motion:reduce){.scroll-cue::after{animation:none}}
 
   /* SECTION SCAFFOLD */
   .section{padding:96px 0;border-bottom:1px solid var(--line)}
@@ -220,17 +245,25 @@
 
 <main id="main">
 
-<!-- §2.2 HERO -->
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow reveal">ChatGPT advertising for commercial brokerages</p>
-    <h1 class="reveal">Your next client is asking an&nbsp;AI<br>who they should call. <em>Be the answer.</em></h1>
-    <p class="lede reveal">Every dollar going into data and tooling makes your brokers faster. It doesn't make the phone ring.</p>
-    <div class="cta-row reveal">
+<!-- §2.2 HERO — full-bleed video -->
+<section class="hero" id="hero">
+  <div class="hero-media" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero/hero-poster.jpg">
+      <source src="assets/hero/hero-1080.mp4" media="(min-width:800px)" type="video/mp4">
+      <source src="assets/hero/hero-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
+  </div>
+  <div class="wrap hero-content">
+    <p class="eyebrow">ChatGPT advertising for commercial brokerages</p>
+    <h1>Your next client is asking an&nbsp;AI<br>who they should call. <em>Be the answer.</em></h1>
+    <p class="lede">Every dollar going into data and tooling makes your brokers faster. It doesn't make the phone ring.</p>
+    <div class="cta-row">
       <a class="btn btn-primary" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Pick your territory →</a>
       <a class="btn btn-ghost" href="#offer">See the offer</a>
     </div>
   </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll</div>
 </section>
 
 <!-- §2.3 PROOF BLOCK -->
@@ -408,6 +441,30 @@
       });
     }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  })();
+
+  /* Nav: transparent over hero, solid on scroll */
+  (function(){
+    var nav = document.querySelector('nav');
+    var hero = document.getElementById('hero');
+    if (!nav || !hero) return;
+    function onScroll(){
+      var threshold = hero.offsetHeight - nav.offsetHeight * 2;
+      nav.classList.toggle('nav--solid', window.scrollY > threshold);
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+  })();
+
+  /* Respect reduced motion: pause the hero video, poster stays */
+  (function(){
+    try{
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        var v = document.querySelector('.hero-video');
+        if (v){ v.removeAttribute('autoplay'); v.pause(); }
+      }
+    }catch(e){}
   })();
 
   /* Offer countdown */
