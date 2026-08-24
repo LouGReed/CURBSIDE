@@ -1,540 +1,783 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Curbside CRE — LLM advertising for commercial real estate brokerages</title>
-<meta name="description" content="Your next client is asking an AI who to call. Be the answer. Custom ChatGPT ad campaigns for commercial brokerages — setup fees half off through Labor Day.">
-<meta name="theme-color" content="#2B2A28">
-<link rel="canonical" href="https://curbside-cre.com/">
-
-<!-- Open Graph / social -->
-<meta property="og:title" content="Curbside CRE — LLM advertising for commercial real estate brokerages">
-<meta property="og:description" content="Your next client is asking an AI who to call. Be the answer. Custom ChatGPT ad campaigns for CRE brokerages — setup fees half off through Labor Day.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://curbside-cre.com/">
-<meta property="og:site_name" content="Curbside CRE">
-<meta name="twitter:card" content="summary_large_image">
-<!-- og:image intentionally omitted — no 1200x630 social card supplied yet -->
-
-<!-- Favicon: coral ball -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FBF6EF'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%232C4A6E'/%3E%3Ccircle cx='25' cy='25' r='3.6' fill='%23FBF6EF'/%3E%3C/svg%3E">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curbside — Modern advertising for the CRE sector</title>
+<meta name="description" content="Modern, LLM-integrated advertising for CRE brokerages. We get you in the top 3, for the lowest ad spend possible. Austin, Texas.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400&display=swap">
 
 <style>
   :root{
-    --bg:#FBF6EF;
-    --bg-2:#E4DBCD;
-    --paper:#FFFDF8;
-    --ink:#2B2A28;
-    --ink-soft:#46433E;
-    --muted:#736B5F;
-    --line:rgba(43,42,40,.14);
-    --line-2:rgba(43,42,40,.30);
-    --accent:#2C4A6E;
-    --accent-deep:#1C3350;
-    --accent-on-dark:#8FB3DE;
-    --accent-soft:#DCE4EF;
-    --accent-wash:rgba(44,74,110,.09);
-    --btn-label:#FFFDF8;
-    --dark-bg:#2B2A28;
-    --dark-line:rgba(251,246,239,.16);
-    --dark-text:#FBF6EF;
-    --dark-muted:#A89E8D;
+    --ink:      #1A1D1F;
+    --ink-2:    #6B7378;
+    --ink-3:    #A8AEB2;
+    --ground:   #E9EBEC;
+    --paper:    #F2F3F4;
+    --void:     #000000;
+    --rule:     #CDD1D3;
+    --slab:     #D8DBDD;
+    --slab-line:#B6BBBE;
+    --slab-ink: #8A9196;
+    --slab-dk:      #0E0E0E;
+    --slab-dk-line: #2E2E2E;
+    --slab-dk-ink:  #5A5A5A;
+
+    --gutter: clamp(20px, 4vw, 72px);
+    --font: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-  @font-face{font-family:'Cooper Black';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/cooper-black.ttf') format('truetype')}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6}
-  a{color:inherit;text-decoration:none}
-  .serif{font-family:'Cooper Black',Georgia,serif}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
-  ::selection{background:var(--accent-soft);color:var(--accent-deep)}
 
-  .skip{position:absolute;top:-40px;left:8px;background:var(--ink);color:var(--bg);padding:8px 16px;z-index:100;border-radius:4px}
-  .skip:focus{top:8px}
+  *,*::before,*::after{ box-sizing:border-box; }
 
-  @keyframes roll{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-  @media(prefers-reduced-motion:reduce){.logo-ball{animation:none!important}}
-
-  /* NAV */
-  nav{padding:16px 0;border-bottom:1px solid transparent;background:transparent;position:sticky;top:0;z-index:20;transition:background .35s ease,border-color .35s ease,backdrop-filter .35s ease}
-  nav::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,18,.5),transparent);pointer-events:none;transition:opacity .35s ease;opacity:1}
-  nav.nav--solid{background:rgba(251,246,239,.92);border-bottom-color:var(--line);backdrop-filter:saturate(140%) blur(8px)}
-  nav.nav--solid::before{opacity:0}
-  nav .row{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
-  /* light treatment while over the hero video */
-  nav:not(.nav--solid) .logo-line{background:#FBF6EF}
-  nav:not(.nav--solid) .logo-word{color:var(--accent-on-dark)}
-  nav:not(.nav--solid) .logo-cre{color:#FBF6EF}
-  nav:not(.nav--solid) .tag{color:rgba(251,246,239,.82);border-left-color:rgba(251,246,239,.32)}
-  nav:not(.nav--solid) .nav-links a:not(.btn){color:rgba(251,246,239,.88)}
-  nav:not(.nav--solid) .nav-links a:not(.btn):hover{color:#fff}
-  nav:not(.nav--solid) .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.06)}
-  nav:not(.nav--solid) .btn-ghost:hover{background:rgba(255,255,255,.16);border-color:#fff}
-  .logo{display:flex;align-items:center;gap:15px}
-  .logo-ball{width:24px;height:24px;border-radius:50%;background:var(--accent);position:relative;flex:none;animation:roll 9s linear infinite}
-  .logo-ball::after{content:"";position:absolute;top:22%;left:22%;width:22%;height:22%;border-radius:50%;background:var(--bg)}
-  .logo-lockup{display:flex;flex-direction:column;align-items:stretch}
-  .logo-word{font-family:'Cooper Black',serif;font-weight:700;font-size:34px;color:var(--accent);line-height:1}
-  .logo-curb{display:flex;align-items:center;gap:9px;margin-top:6px}
-  .logo-line{height:4px;flex:1;min-width:70px;background:var(--ink);border-radius:2px}
-  .logo-cre{font-family:'Cooper Black',serif;font-size:13px;letter-spacing:.24em;color:var(--ink);line-height:1;margin-right:-.24em}
-  .logo .tag{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-left:16px;padding-left:16px;border-left:1px solid var(--line)}
-  .nav-links{display:flex;gap:36px;font-size:14px;color:var(--muted);font-weight:500;align-items:center}
-  .nav-links a{transition:color .15s}
-  .nav-links a:hover{color:var(--ink)}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:3px;font-size:14px;font-weight:500;letter-spacing:.01em;border:1px solid var(--accent-deep);transition:all .2s;cursor:pointer;line-height:1}
-  .btn-primary{background:var(--accent);color:var(--btn-label);border-color:var(--accent)}
-  .btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-1px)}
-  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
-  .btn-ghost:hover{background:var(--paper);border-color:var(--ink)}
-
-  /* HERO — full-bleed video */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:96px 0 clamp(60px,10vh,112px);margin-top:-73px;overflow:hidden;border-bottom:none}
-  .hero-media{position:absolute;inset:0;z-index:0}
-  .hero-video{width:100%;height:100%;object-fit:cover;display:block}
-  .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,18,.42) 0%,rgba(20,19,18,.20) 34%,rgba(20,19,18,.55) 78%,rgba(20,19,18,.82) 100%)}
-  .hero-content{position:relative;z-index:1}
-  .eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
-  h1{font-family:'Cooper Black',serif;font-size:clamp(38px,4.8vw,66px);line-height:1.06;letter-spacing:-.008em;font-weight:400;max-width:960px;margin-bottom:24px;color:var(--ink);position:relative;z-index:1}
-  h1 em{font-style:normal;color:var(--accent-deep)}
-  .lede{font-family:'Inter',sans-serif;font-size:clamp(18px,1.6vw,22px);color:var(--ink-soft);max-width:660px;margin-bottom:40px;line-height:1.5;position:relative;z-index:1}
-  .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
-  /* hero over dark video */
-  .hero .eyebrow{color:#fff;opacity:.92;text-shadow:0 1px 20px rgba(0,0,0,.4)}
-  .hero h1{color:#FBF6EF;text-shadow:0 2px 34px rgba(0,0,0,.4)}
-  .hero h1 em{color:var(--accent-on-dark)}
-  .hero .lede{color:rgba(251,246,239,.9);text-shadow:0 1px 22px rgba(0,0,0,.45)}
-  .hero .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.55);backdrop-filter:blur(4px)}
-  .hero .btn-ghost:hover{background:rgba(255,255,255,.16);border-color:#fff}
-  .scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:1;color:rgba(251,246,239,.7);font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
-  .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(rgba(251,246,239,.7),transparent);animation:cue 2.2s ease-in-out infinite}
-  @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
-  @media(prefers-reduced-motion:reduce){.scroll-cue::after{animation:none}}
-
-  /* SECTION SCAFFOLD */
-  .section{padding:96px 0;border-bottom:1px solid var(--line)}
-  .section-eyebrow{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);margin-bottom:18px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
-  .section-title{font-family:'Cooper Black',serif;font-size:clamp(30px,4.2vw,48px);letter-spacing:-.005em;font-weight:400;max-width:820px;line-height:1.08;margin-bottom:56px}
-  .section-title em{font-style:normal;color:var(--accent-deep)}
-
-  /* PROOF BLOCK (§2.3) */
-  .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .proof-shot{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper);box-shadow:0 20px 44px -26px rgba(43,42,40,.4)}
-  .proof-query{font-family:'Cooper Black',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.4vw,28px);line-height:1.3;letter-spacing:-.005em;color:var(--ink);margin:6px 0 4px}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px}
-  .chip{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);border:1px solid var(--line-2);border-radius:999px;padding:8px 16px;line-height:1}
-  .dark-card{background:var(--dark-bg);color:var(--dark-text);border-radius:10px;padding:28px}
-  .dark-card h3{font-family:'Cooper Black',serif;font-weight:400;font-size:clamp(21px,2.2vw,25px);line-height:1.18;letter-spacing:-.005em;margin-bottom:12px}
-  .dark-card h3 em{font-style:normal;color:var(--accent-on-dark)}
-  .dark-card p{font-size:15px;color:var(--dark-muted);line-height:1.6}
-
-  /* CHANNEL COMPARISON (§2.4) */
-  .channels{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .channel{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:28px}
-  .channel.dark{background:var(--dark-bg);border-color:var(--dark-bg);color:var(--dark-text)}
-  .channel-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-  .channel-head h3{font-family:'Cooper Black',serif;font-weight:400;font-size:22px;color:var(--ink)}
-  .channel.dark .channel-head h3{color:var(--dark-text)}
-  .brand-badge{flex:none;width:44px;height:44px;border-radius:11px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(43,42,40,.07)}
-  .channel.dark .brand-badge{border-color:rgba(255,255,255,.16)}
-  .brand-badge img{display:block;width:auto;height:auto;max-width:74%;max-height:74%}
-  .brand-badge svg{display:block;width:64%;height:64%}
-  .channel p{font-size:15px;color:var(--ink-soft);line-height:1.6}
-  .channel.dark p{color:var(--dark-muted)}
-
-  /* OFFER (§2.5) */
-  .offer-panel{border:1px solid var(--accent);border-radius:10px;overflow:hidden;display:grid;grid-template-columns:1fr 2fr}
-  .offer-left{background:var(--accent-wash);padding:44px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-  .offer-halfoff{font-family:'Cooper Black',serif;font-weight:400;font-size:clamp(40px,6vw,52px);color:var(--accent-deep);line-height:1}
-  .offer-setup{font-family:'Cooper Black',serif;font-weight:400;font-size:26px;color:var(--ink);line-height:1.1;margin-top:2px}
-  .offer-through{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-top:16px}
-  .countdown{font-family:'Inter',sans-serif;font-variant-numeric:tabular-nums;color:var(--accent-deep);font-size:13px;letter-spacing:.08em;margin-top:10px;min-height:1.1em}
-  .offer-closed{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);line-height:1.5;margin-top:8px;max-width:34ch}
-  .offer-scaling{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);line-height:1.5;margin-top:18px;max-width:30ch}
-  .offer-right{padding:8px 36px}
-  .offer-row{padding:22px 0;border-bottom:1px solid var(--line)}
-  .offer-row:last-child{border-bottom:none}
-  .offer-row h3{font-family:'Cooper Black',serif;font-weight:400;font-size:19px;color:var(--ink);margin-bottom:6px}
-  .offer-row p{font-size:15px;color:var(--ink-soft);line-height:1.55}
-
-  /* WHY NOW (§2.7) */
-  .whynow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-  .whynow-item{border-top:1px solid var(--line-2);padding-top:20px}
-  .whynow-item h3{font-family:'Cooper Black',serif;font-weight:400;font-size:19px;color:var(--ink);margin-bottom:10px}
-  .whynow-item p{font-size:15px;color:var(--muted);line-height:1.65}
-
-  /* Shared full-bleed photo band */
-  .photo-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-  .photo-bg img{width:100%;height:100%;object-fit:cover;display:block}
-
-  /* ARGUMENT BAND (§2.8) — full-bleed photo */
-  .argument{position:relative;overflow:hidden;padding:clamp(96px,17vh,176px) 0;border-bottom:none;color:var(--dark-text)}
-  .argument .photo-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(18,17,16,.9) 0%,rgba(18,17,16,.72) 42%,rgba(18,17,16,.34) 100%)}
-  .argument-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
-  .argument h2{font-family:'Cooper Black',serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);line-height:1.16;letter-spacing:-.008em;color:#FBF6EF}
-  .argument h2 em{font-style:normal;color:var(--accent-on-dark)}
-  .argument-body{font-size:clamp(16px,1.4vw,18px);color:rgba(251,246,239,.84);line-height:1.7}
-
-  /* SUITE STRIP (§2.9) */
-  .suite{padding:64px 0;border-bottom:1px solid var(--line);background:var(--paper)}
-  .suite-line{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
-  .suite-chip{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
-  .suite-note{font-size:15px;color:var(--ink-soft);line-height:1.65;max-width:72ch}
-  .suite-note strong{color:var(--ink);font-weight:600}
-
-  /* CLOSING CTA (§2.10) — full-bleed photo */
-  .cta{position:relative;overflow:hidden;padding:clamp(120px,22vh,220px) 0;text-align:center;color:var(--dark-text)}
-  .cta .photo-scrim{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at center,rgba(18,17,16,.52) 0%,rgba(18,17,16,.84) 100%)}
-  .cta-inner{position:relative;z-index:1}
-  .cta h2{font-family:'Cooper Black',serif;font-size:clamp(32px,4.6vw,58px);letter-spacing:-.008em;font-weight:400;margin-bottom:20px;line-height:1.06;max-width:900px;margin-left:auto;margin-right:auto;color:#FBF6EF}
-  .cta h2 em{color:var(--accent-on-dark);font-style:normal}
-  .cta p{font-size:18px;color:rgba(251,246,239,.82);margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.55}
-
-  /* FOOTER */
-  footer{padding:56px 0 44px;font-size:13.5px;color:var(--muted);background:var(--bg)}
-  .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px}
-  .foot-brand{font-family:'Cooper Black',serif;font-size:24px;color:var(--accent);margin-bottom:8px;font-weight:700;display:flex;align-items:center;gap:10px}
-  .foot-ball{width:16px;height:16px;border-radius:50%;background:var(--accent);position:relative;flex:none}
-  .foot-ball::after{content:"";position:absolute;top:22%;left:22%;width:22%;height:22%;border-radius:50%;background:var(--bg)}
-  .foot-brand .cre{color:var(--ink)}
-  .foot-tag{color:var(--muted);font-size:13px;font-family:'Inter',sans-serif}
-  .foot-meta{text-align:right;font-family:'Inter',sans-serif;font-size:13px;color:var(--muted)}
-  .foot-date{margin-top:6px}
-
-  /* Scroll reveal */
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-
-  /* RESPONSIVE */
-  @media(max-width:1180px){.logo .tag{display:none}}
-  @media(max-width:900px){
-    .nav-links a:not(.btn){display:none}
-    .logo .tag{display:none}
-    .proof-grid,.channels,.whynow-grid,.argument-grid{grid-template-columns:1fr;gap:32px}
-    .argument .photo-scrim{background:linear-gradient(180deg,rgba(18,17,16,.82),rgba(18,17,16,.7))}
-    .offer-panel{grid-template-columns:1fr}
-    .offer-left{padding:40px 28px}
-    .offer-right{padding:0 28px}
-    .section,.argument,.suite{padding:64px 0}
-    .hero{padding:64px 0 56px}
-    .cta{padding:88px 0}
+  body{
+    cursor:url("assets/logo/cursor-ball.png") 14 14, auto;
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--font);
+    font-weight:300;
+    font-size:20px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  @media(max-width:560px){
-    .wrap{padding:0 22px}
-    .channel,.dark-card{padding:24px}
-    .offer-left{padding:36px 22px}
-    .offer-right{padding:0 22px}
+
+  /* ─── shared ─────────────────────────────────────────────── */
+
+  .wrap{ padding-inline:var(--gutter); }
+
+  .blank{ color:var(--ink-3); }
+
+  .label{
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--slab-ink);
+  }
+
+  .tag{
+    font-size:15px;
+    letter-spacing:.02em;
+    color:var(--ink-2);
+    display:flex; align-items:center; gap:8px;
+  }
+  .dot{ width:13px; height:13px; flex:0 0 auto; display:inline-block; }
+
+  .arrow-link{
+    display:inline-flex;
+    align-items:baseline;
+    gap:.5em;
+    font-size:20px;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .arrow-link .arw{ display:inline-block; transition:transform .25s ease; }
+  .arrow-link:hover .arw,
+  .arrow-link:focus-visible .arw{ transform:translateX(5px); }
+  .arrow-link:focus-visible{ outline:1px solid var(--ink); outline-offset:6px; }
+
+  .rule{ height:1px; background:var(--rule); border:0; margin:0; }
+
+  a, button, .hero-dots i{ cursor:url("assets/logo/cursor-ball.png") 14 14, pointer; }
+
+
+  /* placeholder slabs */
+  .slab{
+    position:relative;
+    background:var(--slab);
+    border:1px dashed var(--slab-line);
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+  }
+  .slab span{
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--slab-ink);
+    text-align:center;
+    padding:1em;
+  }
+  .slab.on-dark{ background:var(--slab-dk); border-color:var(--slab-dk-line); }
+  .slab.on-dark span{ color:var(--slab-dk-ink); }
+
+  .grid-img{
+    display:block; width:100%; height:auto; object-fit:cover;
+  }
+
+  .grid-video{
+    display:block; width:100%; object-fit:cover; background:var(--slab-dk);
+  }
+
+  .r-4x5{ aspect-ratio:4/5; }
+  .r-16x9{ aspect-ratio:16/9; }
+  .r-1x1{ aspect-ratio:1/1; }
+  .r-3x2{ aspect-ratio:3/2; }
+
+  /* ─── header ─────────────────────────────────────────────── */
+
+  .site-header{
+    position:absolute; inset:0 0 auto 0; z-index:10;
+    display:flex; align-items:flex-start; justify-content:space-between;
+    padding:34px var(--gutter);
+    color:#fff;
+  }
+
+  .wordmark{
+    font-size:34px;
+    line-height:1.06;
+    letter-spacing:-.015em;
+    font-weight:300;
+    color:inherit;
+    text-decoration:none;
+    position:relative;
+    display:inline-block;
+  }
+  .wordmark{
+    display:inline-flex; align-items:center; gap:11px;
+    height:54px;
+  }
+  .wordmark .ball-mark{ height:100%; width:auto; }
+  .wordmark .logo{ display:block; height:100%; width:auto; }
+  @media (max-width:900px){ .wordmark{ height:38px; gap:8px; } }
+
+  .header-tools{ display:flex; gap:26px; align-items:center; }
+  .icon-btn{
+    background:none; border:0; padding:0; cursor:pointer;
+    color:inherit; line-height:0;
+  }
+  .icon-btn:focus-visible{ outline:1px solid currentColor; outline-offset:6px; }
+
+  /* ─── hero ───────────────────────────────────────────────── */
+
+  .hero{
+    position:relative;
+    height:100vh; min-height:600px;
+    background:var(--void);
+  }
+  .hero-video{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity .9s ease;
+  }
+  .hero-video.is-on{ opacity:1; }
+  .hero-shade{
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,.08) 38%, rgba(0,0,0,0) 60%, rgba(0,0,0,.25) 100%);
+    pointer-events:none;
+  }
+
+  .hero-caption{
+    position:absolute; left:var(--gutter); right:var(--gutter); bottom:88px;
+    color:#fff;
+  }
+  .hero-tag{
+    font-size:15px; letter-spacing:.04em; color:rgba(255,255,255,.85);
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:9px;
+  }
+  .hero-title{
+    font-size:clamp(34px, 5.4vw, 68px);
+    line-height:1.06;
+    letter-spacing:-.02em;
+    font-weight:300;
+    margin:0;
+    color:rgba(255,255,255,.92);
+    text-wrap:balance;
+  }
+  .hero-cta{
+    margin-top:26px;
+    color:#fff;
+    font-size:20px;
+  }
+
+  .scroll-cue{
+    position:absolute; right:var(--gutter); bottom:88px;
+    color:rgba(255,255,255,.55);
+    line-height:0;
+  }
+
+  .hero-dots{
+    position:absolute; left:var(--gutter); bottom:44px;
+    display:flex; gap:9px;
+  }
+  .hero-dots i{
+    width:26px; height:1px; background:rgba(255,255,255,.28); display:block;
+  }
+  .hero-dots i:first-child{ background:rgba(255,255,255,.8); }
+
+  /* ─── section scaffolding ────────────────────────────────── */
+
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:24px; flex-wrap:wrap;
+    padding-block:64px 34px;
+  }
+  .section-head h2{
+    font-size:28px; font-weight:300; letter-spacing:-.01em; margin:0;
+    color:var(--ink);
+  }
+
+  /* staggered work grid */
+  .work-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:clamp(24px, 5vw, 92px);
+    row-gap:clamp(48px, 7vw, 120px);
+    padding-bottom:110px;
+  }
+  .work-grid .col-b{ margin-top:clamp(56px, 9vw, 170px); }
+
+  .card{ display:block; text-decoration:none; color:inherit; }
+  .card .meta{ padding-top:16px; }
+  .card .card-title{
+    font-size:24px; line-height:1.25; font-weight:300; margin:6px 0 0;
+    color:var(--ink);
+  }
+  .card .card-desc{
+    font-size:16px; line-height:1.55; font-weight:300; margin:8px 0 0;
+    color:var(--ink-2);
+    max-width:44ch;
+  }
+
+  /* ─── manifesto ──────────────────────────────────────────── */
+
+  .manifesto{
+    background:var(--void);
+    color:#fff;
+    padding-block:clamp(110px, 16vh, 190px);
+  }
+  .manifesto-inner{ max-width:900px; margin-inline:auto; }
+  .manifesto p{
+    font-size:clamp(24px, 3.1vw, 44px);
+    line-height:1.28;
+    letter-spacing:-.015em;
+    font-weight:300;
+    margin:0 0 1.1em;
+    color:rgba(255,255,255,.92);
+    text-wrap:balance;
+  }
+  .manifesto p:last-child{ margin-bottom:0; }
+  .manifesto em{ font-style:italic; }
+  .manifesto .eyebrow{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:rgba(255,255,255,.28);
+    margin-bottom:44px;
+  }
+
+  /* ─── triptych ───────────────────────────────────────────── */
+
+  .triptych{ display:grid; grid-template-columns:1fr 2fr 1fr; }
+  .triptych .slab{ aspect-ratio:auto; height:clamp(220px, 32vw, 460px); border-left:0; border-right:0; }
+  .triptych .slab + .slab{ border-left:1px dashed var(--slab-line); }
+
+  /* ─── two-column text block ──────────────────────────────── */
+
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1.35fr;
+    column-gap:clamp(24px, 6vw, 110px);
+    row-gap:40px;
+    padding-block:clamp(70px, 9vw, 130px);
+  }
+  .two-col .aside{ color:var(--ink-2); font-size:20px; line-height:1.65; }
+  .two-col .body p{ margin:0 0 1.2em; color:var(--ink); font-size:20px; line-height:1.65; }
+  .two-col .body p:last-child{ margin-bottom:0; }
+  .two-col .body em{ font-style:italic; }
+
+  /* ─── contacts ───────────────────────────────────────────── */
+
+  .contacts{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    column-gap:clamp(24px, 5vw, 80px);
+    row-gap:46px;
+    padding-block:clamp(56px, 7vw, 90px) clamp(70px, 9vw, 120px);
+  }
+  .contacts h3{ font-size:28px; font-weight:300; margin:0; letter-spacing:-.01em; }
+  .contact-role{ font-size:24px; font-weight:300; color:var(--ink); line-height:1.2; }
+  .contact-name{ font-size:13px; color:var(--ink-3); line-height:1.4; margin-top:2px; }
+  .contact-mail{ font-size:20px; color:var(--ink-3); margin-top:16px; }
+
+  /* ─── footer ─────────────────────────────────────────────── */
+
+
+  .site-footer{ background:var(--paper); padding-block:8px 40px; }
+
+  .footer-base{
+    display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    padding-top:24px;
+    font-size:15px; color:var(--ink-3);
+  }
+
+  /* ─── how it works ───────────────────────────────────────── */
+
+  .steps{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    column-gap:clamp(24px, 6vw, 110px);
+    row-gap:40px;
+    padding-block:clamp(70px, 9vw, 130px);
+  }
+  .steps h3{ font-size:28px; font-weight:300; margin:0; letter-spacing:-.01em; }
+  .steps-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:clamp(24px, 5vw, 80px);
+    row-gap:46px;
+  }
+  .step-num{ font-size:13px; color:var(--ink-3); }
+  .step-name{ font-size:24px; font-weight:300; color:var(--ink); line-height:1.2; margin-top:4px; }
+  .step-desc{ font-size:16px; line-height:1.55; color:var(--ink-2); margin:10px 0 0; max-width:40ch; }
+
+  /* ─── closing cta ────────────────────────────────────────── */
+
+  .closer{
+    padding-block:clamp(90px, 13vw, 170px);
+    text-align:center;
+  }
+  .closer h2{
+    font-size:clamp(34px, 5vw, 64px);
+    font-weight:300;
+    letter-spacing:-.02em;
+    margin:0 0 30px;
+    color:var(--ink);
+  }
+  .closer .arrow-link{ font-size:22px; }
+
+  /* ─── menu takeover + demo sheet ─────────────────────────── */
+
+  .overlay{
+    position:fixed; inset:0; z-index:60;
+    background:var(--ground);
+    transform:translateY(-102%);
+    transition:transform .5s cubic-bezier(.7,0,.3,1);
+    overflow-y:auto;
+  }
+  .overlay.open{ transform:translateY(0); }
+
+  .overlay-bar{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    padding:34px var(--gutter);
+  }
+  .overlay-bar .wordmark{ height:54px; }
+  .overlay .icon-btn{ color:var(--ink); }
+
+  .menu-nav{
+    display:flex; flex-direction:column; gap:2px;
+    padding:6vh var(--gutter) 80px;
+  }
+  .menu-nav a{
+    font-size:clamp(34px, 6vw, 64px);
+    font-weight:300; letter-spacing:-.02em; line-height:1.3;
+    color:var(--ink-3); text-decoration:none;
+    width:fit-content;
+    transition:color .25s ease;
+  }
+  .menu-nav a:hover, .menu-nav a:focus-visible{ color:var(--ink); }
+
+  .demo-sheet{ z-index:70; }
+  .demo-inner{
+    max-width:1260px; margin-inline:auto;
+    padding:2vh var(--gutter) 48px;
+    display:grid;
+    grid-template-columns:5fr 7fr;
+    column-gap:clamp(28px, 4vw, 64px);
+    align-items:center;
+  }
+  .demo-left{ display:flex; flex-direction:column; }
+  @media (max-width:900px){
+    .demo-inner{ grid-template-columns:1fr; row-gap:28px; }
+  }
+  .demo-q-label{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-3); margin-bottom:14px;
+  }
+  .demo-q{
+    font-size:clamp(20px, 2vw, 28px);
+    font-weight:300; line-height:1.35; letter-spacing:-.01em;
+    color:var(--ink); margin:0;
+    text-wrap:balance;
+  }
+  .demo-a-label{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-3); margin:0 0 12px;
+  }
+  .demo-frame{
+    border:1px solid var(--rule);
+    background:#fff;
+    width:fit-content; max-width:100%;
+  }
+  .demo-frame img{
+    display:block;
+    width:100%; height:auto;
+    max-height:calc(100vh - 220px);
+    object-fit:contain;
+  }
+  .demo-turn{
+    font-size:clamp(20px, 2.2vw, 27px);
+    font-weight:400; line-height:1.35; letter-spacing:-.01em;
+    color:var(--ink); margin:44px 0 0;
+    text-wrap:balance;
+  }
+
+  /* ─── responsive ─────────────────────────────────────────── */
+
+  @media (max-width: 900px){
+    body{ font-size:18px; }
+    .work-grid{ grid-template-columns:1fr; row-gap:64px; }
+    .work-grid .col-b{ margin-top:0; }
+    .two-col{ grid-template-columns:1fr; }
+    .steps{ grid-template-columns:1fr; }
+    .steps-grid{ grid-template-columns:1fr; }
+    .contacts{ grid-template-columns:1fr 1fr; }
+    .triptych{ grid-template-columns:1fr; }
+    .triptych .slab + .slab{ border-left:0; border-top:1px dashed var(--slab-line); }
+    .site-header{ padding:24px var(--gutter); }
+    .wordmark{ font-size:26px; }
+  }
+
+
+  /* ─── motion ─────────────────────────────────────────────── */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .8s cubic-bezier(.25,.46,.45,.94), transform .8s cubic-bezier(.25,.46,.45,.94);
+  }
+  .reveal.is-in{ opacity:1; transform:none; }
+
+  .scroll-cue{ cursor:pointer; }
+  .scroll-cue svg{ animation:cue-nudge 2.6s ease-in-out infinite; }
+  @keyframes cue-nudge{ 0%,100%{ transform:translateY(0); } 55%{ transform:translateY(7px); } }
+
+  .hero-dots i{ transition:background .4s ease; cursor:pointer; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
   }
 </style>
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
-
-<a href="#main" class="skip">Skip to content</a>
-
-<nav aria-label="Primary">
-  <div class="wrap row">
-    <a href="/" class="logo" aria-label="Curbside CRE — home">
-      <span class="logo-ball" aria-hidden="true"></span>
-      <span class="logo-lockup">
-        <span class="logo-word">Curbside</span>
-        <span class="logo-curb"><span class="logo-line"></span><span class="logo-cre">CRE</span></span>
-      </span>
-      <span class="tag">LLM advertising for commercial real estate brokerages</span>
-    </a>
-    <div class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#offer">The offer</a>
-      <a class="btn btn-ghost" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Pick your territory →</a>
-    </div>
+<!-- ══ 01 · HEADER + HERO ═══════════════════════════════════ -->
+<header class="site-header">
+  <a class="wordmark" href="#" aria-label="Curbside home"><svg class="ball-mark" viewBox="0 0 222 340" aria-hidden="true"><defs><mask id="bm-F8F5F0"><circle cx="111" cy="169.5" r="95" fill="white"/><circle cx="59" cy="144.5" r="21" fill="black"><animateMotion dur="7s" repeatCount="indefinite" path="M0,0 a52,38 0 1 1 104,50 a52,38 0 1 1 -104,-50"/></circle></mask></defs><circle cx="111" cy="169.5" r="95" fill="#F8F5F0" mask="url(#bm-F8F5F0)"/></svg><img class="logo" src="assets/logo/wordmark-white.png" alt="Curbside"></a>
+  <div class="header-tools">
+    <button class="icon-btn" aria-label="Menu">
+      <svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.2">
+        <line x1="0" y1="1" x2="26" y2="1"/><line x1="0" y1="13" x2="26" y2="13"/>
+      </svg>
+    </button>
   </div>
-</nav>
+</header>
 
-<main id="main">
+<section class="hero" id="top">
+  <video class="hero-video hv-0 is-on" autoplay muted loop playsinline src="assets/films/hero-1.mp4"></video>
+  <video class="hero-video hv-1" muted loop playsinline preload="auto" src="assets/films/hero-2.mp4"></video>
+  <video class="hero-video hv-2" muted loop playsinline preload="auto" src="assets/films/hero-3.mp4"></video>
+  <video class="hero-video hv-3" muted loop playsinline preload="auto" src="assets/films/hero-4.mp4"></video>
+  <div class="hero-shade" aria-hidden="true"></div>
 
-<!-- §2.2 HERO — full-bleed video -->
-<section class="hero" id="hero">
-  <div class="hero-media" aria-hidden="true">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero/hero-poster.jpg">
-      <source src="assets/hero/hero-1080.mp4" media="(min-width:800px)" type="video/mp4">
-      <source src="assets/hero/hero-720.mp4" type="video/mp4">
-    </video>
-    <div class="hero-scrim"></div>
+  <div class="hero-caption">
+    <div class="hero-tag"><svg class="dot" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 1a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM6.4 5.1a2.1 2.4 0 1 1 0 4.8 2.1 2.4 0 0 1 0-4.8z" fill="currentColor"/></svg><span class="hero-tag-txt">In the Texas Triangle</span></div>
+    <h1 class="hero-title">Modern advertising for the CRE sector</h1>
+    <a class="arrow-link hero-cta" href="#book">Book a strategy call <span class="arw">&rarr;</span></a>
   </div>
-  <div class="wrap hero-content">
-    <p class="eyebrow">LLM advertising for commercial real estate brokerages</p>
-    <h1>Your next client is asking an&nbsp;AI<br>who they should call. <em>Be the answer.</em></h1>
-    <p class="lede">Every dollar going into data and tooling makes your brokers faster. It doesn't make the phone ring.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener">Pick your territory →</a>
-      <a class="btn btn-ghost" href="#offer">See the offer</a>
-    </div>
+
+  <div class="scroll-cue">
+    <svg width="34" height="46" viewBox="0 0 34 46" fill="none" stroke="currentColor" stroke-width="1.1">
+      <path d="M32 6c-6 8-16 12-24 12"/><path d="M8 18v22"/><path d="M2 33l6 7 6-7"/>
+    </svg>
   </div>
-  <div class="scroll-cue" aria-hidden="true">Scroll</div>
+
+  <div class="hero-dots"><i></i><i></i><i></i><i></i></div>
 </section>
 
-<!-- §2.3 PROOF BLOCK -->
-<section class="section" id="proof">
-  <div class="wrap proof-grid">
-    <div class="reveal">
-      <img class="proof-shot" src="assets/chatgpt-answer-austin.png" width="1192" height="794" loading="eager" decoding="async"
-           alt="ChatGPT answering a tenant's question about opening an Austin branch, naming five commercial brokerages including Cresa and Colliers.">
-    </div>
-    <div class="reveal">
-      <p class="section-eyebrow">We asked. Here's who it named.</p>
-      <p class="proof-query">"We're opening up a branch in Austin. We want lots of light, 10-20,000 square feet, and central location. Who should we call?"</p>
-      <div class="chips">
-        <span class="chip">Cresa</span>
-        <span class="chip">Colliers</span>
-        <span class="chip">HPI Real Estate</span>
-        <span class="chip">Austin Tenant Advisors</span>
-        <span class="chip">ECR</span>
-      </div>
-      <div class="dark-card">
-        <h3>Be the first call, <em>right when your client is looking for you.</em></h3>
-        <p>Nobody paid for that placement — which is exactly why it's still available.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- §2.4 CHANNEL COMPARISON -->
-<section class="section" id="how">
+<!-- ══ 03 · MANIFESTO — FULL BLEED BLACK ════════════════════ -->
+<section class="manifesto">
   <div class="wrap">
-    <p class="section-eyebrow reveal">— where attention actually is</p>
-    <h2 class="section-title reveal">Every other channel talks past the moment. <em>ChatGPT is the moment.</em></h2>
-    <div class="channels">
-      <article class="channel reveal">
-        <div class="channel-head">
-          <span class="brand-badge" aria-hidden="true"><img src="assets/logos/meta.png" alt="" loading="lazy" decoding="async"></span>
-          <h3>Meta</h3>
-        </div>
-        <p>Interruption. Someone scrolling, who wasn't thinking about real estate.</p>
-      </article>
-      <article class="channel reveal">
-        <div class="channel-head">
-          <span class="brand-badge" aria-hidden="true"><img src="assets/logos/google.png" alt="" loading="lazy" decoding="async"></span>
-          <h3>Google</h3>
-        </div>
-        <p>Three keywords, ten blue links, four competitors bidding the same words.</p>
-      </article>
-      <article class="channel dark reveal">
-        <div class="channel-head">
-          <span class="brand-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#0D0D0D"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.1419.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span>
-          <h3>ChatGPT</h3>
-        </div>
-        <p>The whole situation, in paragraphs — then they asked what to do.</p>
-      </article>
+    <div class="manifesto-inner">
+      <div class="eyebrow reveal">Manifesto</div>
+      <p class="reveal">Traditional advertising is exceptionally expensive, and only growing more so.</p>
+      <p class="reveal">LLMs offer the newest territory for ranking first, finding the customers who are asking after you.</p>
+      <p class="reveal">Almost no one is spending money within these platforms yet. <em>This is your time to be first.</em></p>
     </div>
   </div>
 </section>
 
-<!-- §2.5 THE OFFER -->
-<section class="section" id="offer">
+<!-- ══ 02 · FEATURED WORK — STAGGERED GRID ══════════════════ -->
+<div class="wrap" id="make">
+  <div class="section-head reveal">
+    <h2>What we make</h2>
+  </div>
+
+  <div class="work-grid">
+    <div class="col-a">
+      <a class="card reveal" href="#">
+        <img class="grid-img r-4x5" src="assets/img/make-strategy.jpg" alt="Night street scene, illuminated storefront and city bus">
+        <div class="meta">
+          <div class="tag"><svg class="dot" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 1a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM6.4 5.1a2.1 2.4 0 1 1 0 4.8 2.1 2.4 0 0 1 0-4.8z" fill="currentColor"/></svg>Film</div>
+          <div class="card-title">Scalable advertising strategy for small to medium firms</div>
+          <p class="card-desc">Advertising materials, optimized for the social AI era.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-b">
+      <a class="card reveal" href="#">
+        <video class="grid-video r-16x9" autoplay muted loop playsinline src="assets/films/make-llm.mp4"></video>
+        <div class="meta">
+          <div class="tag"><svg class="dot" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 1a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM6.4 5.1a2.1 2.4 0 1 1 0 4.8 2.1 2.4 0 0 1 0-4.8z" fill="currentColor"/></svg>LLM</div>
+          <div class="card-title">Advertising integrated into LLMs</div>
+        </div>
+      </a>
+
+      <div style="height:clamp(48px,7vw,120px)"></div>
+
+      <a class="card reveal" href="#">
+        <img class="grid-img r-1x1" src="assets/img/make-analytics.jpg" alt="Curved digital billboard above a passing red bus">
+        <div class="meta">
+          <div class="tag"><svg class="dot" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 1a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM6.4 5.1a2.1 2.4 0 1 1 0 4.8 2.1 2.4 0 0 1 0-4.8z" fill="currentColor"/></svg>Analytics</div>
+          <div class="card-title">Analytics &amp; ROAS</div>
+          <p class="card-desc">Simplified to see spend.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 04b · HOW IT WORKS ═══════════════════════════════════ -->
+<div class="wrap" id="how">
+  <div class="steps reveal">
+    <h3>How it works</h3>
+    <div class="steps-grid">
+      <div>
+        <div class="step-num">1</div>
+        <div class="step-name">Strategy call</div>
+        <p class="step-desc">Let’s map your ideal customer, and what they ask that brings them to you.</p>
+      </div>
+      <div>
+        <div class="step-num">2</div>
+        <div class="step-name">Test prompts</div>
+        <p class="step-desc">We design 3 different test prompts, and run mini campaigns of each.</p>
+      </div>
+      <div>
+        <div class="step-num">3</div>
+        <div class="step-name">Compare the ROAS</div>
+        <p class="step-desc">After our experiment, we compare the ROAS side by side and reinvest in the proven campaign that works.</p>
+      </div>
+      <div>
+        <div class="step-num">4</div>
+        <div class="step-name">Rinse and repeat</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+</div>
+
+<!-- ══ 05 · TWO-COLUMN INTRO ════════════════════════════════ -->
+<div class="wrap">
+  <div class="two-col reveal">
+    <div class="aside">
+      <div class="tag" style="margin-bottom:14px">Curbside, Austin</div>
+      1705 Guadalupe Street<br>
+      Austin, Texas 78701<br>
+      USA
+    </div>
+    <div class="body">
+      <p>Advertising spend is higher than ever, but actual return can still feel opaque. What really converts? Are clicks making sales? How can we be certain our campaign is having an impact?</p>
+      <p>We think that this is because we&rsquo;re all competing for tiny margins of paid space, at a time when competition for your customers&rsquo; attention has never competed with so many things.</p>
+      <p>What&rsquo;s new, and space that&rsquo;s yet to be sold, is inside LLMs. We know it&rsquo;s where people talk, where they go to search for information, a yet-uncorrupted terrain with unprecedented levels of consumer trust and time spent on page.</p>
+      <p>In 2026, this is the most fertile ground to advertise, and the winners are yet to be determined. Start now. <em>Be first.</em></p>
+    </div>
+  </div>
+
+  
+  </div>
+
+<!-- ══ 08 · CLOSING CTA ═════════════════════════════════════ -->
+<div class="wrap">
+  <hr class="rule">
+  <section class="closer reveal" id="book">
+    <h2>Be first.</h2>
+    <a class="arrow-link" href="#">Book a strategy call <span class="arw">&rarr;</span></a>
+  </section>
+</div>
+
+<!-- ══ 09 · FOOTER ══════════════════════════════════════════ -->
+<footer class="site-footer">
   <div class="wrap">
-    <p class="section-eyebrow reveal">— the Labor Day offer</p>
-    <h2 class="section-title reveal">A campaign built around <em>your</em> markets.</h2>
-    <div class="offer-panel reveal">
-      <div class="offer-left">
-        <div id="offer-discount">
-          <p class="offer-halfoff serif">Half off</p>
-          <p class="offer-setup serif">setup fees</p>
-          <p class="offer-through">Through Labor Day · Sept 7</p>
-        </div>
-        <p class="countdown" id="countdown" aria-live="off" aria-label="Offer ends end of day Monday, September 7, 2026, Central time"></p>
-        <p class="offer-closed" id="offer-closed" hidden>Setup discount closed — ask what pricing looks like for your brokerage.</p>
-        <p class="offer-scaling">Pricing scales to your brokerage — we'll size it on the call.</p>
-      </div>
-      <div class="offer-right">
-        <div class="offer-row">
-          <h3>Custom build</h3>
-          <p>Campaign designed around your markets, your voice and the deals you actually win.</p>
-        </div>
-        <div class="offer-row">
-          <h3>3 prompt types</h3>
-          <p>Beta-tested against live queries to find which ones your buyers actually ask.</p>
-        </div>
-        <div class="offer-row">
-          <h3>ROAS tuned</h3>
-          <p>Optimized through your first month.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- §2.7 WHY THIS CHANNEL, RIGHT NOW -->
-<section class="section">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">— why this channel, right now</p>
-    <h2 class="section-title reveal">A window, <em>not a permanent condition.</em></h2>
-    <div class="whynow-grid">
-      <div class="whynow-item reveal">
-        <h3>No minimum</h3>
-        <p>Totally scalable spend. Start at any budget, move it any week, stop whenever.</p>
-      </div>
-      <div class="whynow-item reveal">
-        <h3>Highest intent</h3>
-        <p>They described the whole problem, then asked for a recommendation. Nothing else on the market sits that close to the decision.</p>
-      </div>
-      <div class="whynow-item reveal">
-        <h3>Thin auction</h3>
-        <p>Clicks are cheap because almost nobody is bidding yet. That is a window, not a permanent condition.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- §2.8 ARGUMENT BAND — full-bleed photo -->
-<section class="argument">
-  <div class="photo-bg" aria-hidden="true"><img src="assets/photos/timber.jpg" alt="" loading="lazy" decoding="async"></div>
-  <div class="photo-scrim" aria-hidden="true"></div>
-  <div class="wrap argument-grid">
-    <h2 class="reveal">You're already spending on engineering. <em>The revenue side has to scale with it.</em></h2>
-    <p class="argument-body reveal">That investment turns into ROI only when the client side grows with it — efficiency without demand is just a faster cost center.</p>
-  </div>
-</section>
-
-<!-- §2.9 THE SUITE, DEMOTED -->
-<section class="suite">
-  <div class="wrap">
-    <p class="section-eyebrow reveal">— we also build</p>
-    <div class="suite-line reveal">
-      <span class="suite-chip">Deck Smart</span>
-      <span class="suite-chip">Tour Guide</span>
-      <span class="suite-chip">It Won't Move</span>
-      <span class="suite-chip">Tenant HQ</span>
-      <span class="suite-chip">Watchtower</span>
-    </div>
-    <p class="suite-note reveal">AI tools built by brokers, for brokers — in use at brokerages working office, industrial, retail, and medical. Designed in residency with the teams running deals, including <strong>JLL</strong>.</p>
-  </div>
-</section>
-
-<!-- §2.10 CLOSING CTA — full-bleed photo -->
-<section class="cta" id="contact">
-  <div class="photo-bg" aria-hidden="true"><img src="assets/photos/city.jpg" alt="" loading="lazy" decoding="async"></div>
-  <div class="photo-scrim" aria-hidden="true"></div>
-  <div class="wrap cta-inner">
-    <h2 class="reveal">Thirty minutes and we'll pull your submarket live. <em>Let's pick the territory.</em></h2>
-    <p class="reveal">No deck, no pitch — just your market on the screen and a look at what's already being asked.</p>
-    <a class="btn btn-primary reveal" href="https://calendar.app.google/eR64m1DYPuJjAPY78" target="_blank" rel="noopener" style="padding:16px 32px;font-size:15px">Pick your territory →</a>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap foot-grid">
-    <div>
-      <p class="foot-brand"><span class="foot-ball" aria-hidden="true"></span>Curbside <span class="cre">CRE</span></p>
-      <p class="foot-tag">Built with brokers, for brokers.</p>
-    </div>
-    <div class="foot-meta">
-      <p>© 2026 Curbside CRE</p>
-      <p class="foot-date" id="foot-date">Offer ends Monday, September 7, 2026</p>
+    <div class="footer-base">
+      <div>© Curbside 2026 · 1705 Guadalupe Street, Austin, Texas 78701</div>
     </div>
   </div>
 </footer>
 
+<!-- ══ MENU TAKEOVER ════════════════════════════════════════ -->
+<div class="overlay" id="menu" aria-hidden="true">
+  <div class="overlay-bar">
+    <span class="wordmark"><svg class="ball-mark" viewBox="0 0 222 340" aria-hidden="true"><defs><mask id="bm-C49A6C-1"><circle cx="111" cy="169.5" r="95" fill="white"/><circle cx="59" cy="144.5" r="21" fill="black"><animateMotion dur="7s" repeatCount="indefinite" path="M0,0 a52,38 0 1 1 104,50 a52,38 0 1 1 -104,-50"/></circle></mask></defs><circle cx="111" cy="169.5" r="95" fill="#C49A6C" mask="url(#bm-C49A6C-1)"/></svg><img class="logo" src="assets/logo/wordmark-tan.png" alt="Curbside"></span>
+    <button class="icon-btn" data-close="menu" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <line x1="2" y1="2" x2="22" y2="22"/><line x1="22" y1="2" x2="2" y2="22"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="menu-nav">
+    <a href="#top" data-anchor>Home</a>
+    <a href="#" data-open-demo>The Demo</a>
+    <a href="#book" data-anchor>Book a call</a>
+  </nav>
+</div>
+
+<!-- ══ DEMO SHEET ═══════════════════════════════════════════ -->
+<div class="overlay demo-sheet" id="demo" aria-hidden="true">
+  <div class="overlay-bar">
+    <span class="wordmark"><svg class="ball-mark" viewBox="0 0 222 340" aria-hidden="true"><defs><mask id="bm-C49A6C-2"><circle cx="111" cy="169.5" r="95" fill="white"/><circle cx="59" cy="144.5" r="21" fill="black"><animateMotion dur="7s" repeatCount="indefinite" path="M0,0 a52,38 0 1 1 104,50 a52,38 0 1 1 -104,-50"/></circle></mask></defs><circle cx="111" cy="169.5" r="95" fill="#C49A6C" mask="url(#bm-C49A6C-2)"/></svg><img class="logo" src="assets/logo/wordmark-tan.png" alt="Curbside"></span>
+    <button class="icon-btn" data-close="demo" aria-label="Close demo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <line x1="2" y1="2" x2="22" y2="22"/><line x1="22" y1="2" x2="2" y2="22"/>
+      </svg>
+    </button>
+  </div>
+  <div class="demo-inner">
+    <div class="demo-left">
+      <div class="demo-q-label">A real question, asked to an LLM</div>
+      <p class="demo-q">&ldquo;We&rsquo;re opening up a branch in Austin. We want lots of light, 10&ndash;20,000 square feet, and central location. Who should we call?&rdquo;</p>
+      <p class="demo-turn">We get you in the top 3, for the lowest ad spend possible.</p>
+    </div>
+    <div class="demo-right">
+    <div class="demo-a-label">The answer it gave</div>
+    <div class="demo-frame"><img src="assets/img/demo-answer.jpg" alt="LLM answer showing a map of Austin CRE brokerages and a ranked list of first calls"></div>
+    </div>
+  </div>
+</div>
+
 <script>
-  /* Scroll reveal (unchanged) */
-  (function(){
-    if (!('IntersectionObserver' in window)) {
-      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
-      return;
-    }
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* scroll reveal */
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(e){ e.classList.add('is-in'); });
+  } else {
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, {threshold:.12});
+    els.forEach(function(e){ io.observe(e); });
+  }
+
+  /* hero film reel — words hold still, films rotate */
+  var dots = [].slice.call(document.querySelectorAll('.hero-dots i'));
+  var idx = 0, timer;
+
+  var vids = [].slice.call(document.querySelectorAll('.hero-video'));
+  var N = vids.length;
+  function paint(){
+    dots.forEach(function(d,i){
+      d.style.background = i===idx ? 'rgba(255,255,255,.8)' : 'rgba(255,255,255,.28)';
+    });
+    vids.forEach(function(el,i){
+      el.classList.toggle('is-on', i===idx);
+      if(i===idx){ var p = el.play(); if(p && p.catch) p.catch(function(){}); }
+      else { el.pause(); }
+    });
+  }
+  function go(n){
+    idx = n % N;
+    paint();
+  }
+  function auto(){ timer = setInterval(function(){ go(idx+1); }, 5200); }
+  dots.forEach(function(d,i){
+    d.addEventListener('click', function(){ clearInterval(timer); go(i); auto(); });
+  });
+  paint();
+  if(!reduce) auto();
+
+  /* scroll cue */
+  var cue = document.querySelector('.scroll-cue');
+  if(cue) cue.addEventListener('click', function(){
+    document.querySelector('.section-head').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+
+  /* menu + demo overlays */
+  var menu = document.getElementById('menu');
+  var demo = document.getElementById('demo');
+  var burger = document.querySelector('.site-header .icon-btn[aria-label="Menu"]');
+  function setOpen(el, on){
+    el.classList.toggle('open', on);
+    el.setAttribute('aria-hidden', on ? 'false' : 'true');
+    document.body.style.overflow = (menu.classList.contains('open') || demo.classList.contains('open')) ? 'hidden' : '';
+  }
+  if(burger) burger.addEventListener('click', function(){ setOpen(menu, true); });
+  document.querySelectorAll('[data-close]').forEach(function(b){
+    b.addEventListener('click', function(){ setOpen(document.getElementById(b.getAttribute('data-close')), false); });
+  });
+  document.querySelectorAll('[data-open-demo]').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); setOpen(demo, true); });
+  });
+  document.querySelectorAll('[data-anchor]').forEach(function(a){
+    a.addEventListener('click', function(){ setOpen(menu, false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(demo.classList.contains('open')) setOpen(demo, false);
+      else if(menu.classList.contains('open')) setOpen(menu, false);
+    }
+  });
+
+  /* googly ball: pupil follows cursor */
+  (function(){
+    if (reduce) return;
+    var balls = [].slice.call(document.querySelectorAll('.ball-mark'));
+    if(!balls.length) return;
+    var st = balls.map(function(b){
+      return { svg:b, pupil:b.querySelector('mask circle[fill="black"]'), x:59, y:144.5, tx:59, ty:144.5, engaged:false };
+    });
+    var mx=null, my=null;
+    document.addEventListener('pointermove', function(e){
+      mx=e.clientX; my=e.clientY;
+      st.forEach(function(s){
+        if(!s.engaged){
+          var am = s.pupil.querySelector('animateMotion');
+          if(am) am.remove();
+          s.engaged = true;
         }
       });
-    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-  })();
-
-  /* Nav: transparent over hero, solid on scroll */
-  (function(){
-    var nav = document.querySelector('nav');
-    var hero = document.getElementById('hero');
-    if (!nav || !hero) return;
-    function onScroll(){
-      var threshold = hero.offsetHeight - nav.offsetHeight * 2;
-      nav.classList.toggle('nav--solid', window.scrollY > threshold);
-    }
-    onScroll();
-    window.addEventListener('scroll', onScroll, {passive:true});
-    window.addEventListener('resize', onScroll, {passive:true});
-  })();
-
-  /* Respect reduced motion: pause the hero video, poster stays */
-  (function(){
-    try{
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-        var v = document.querySelector('.hero-video');
-        if (v){ v.removeAttribute('autoplay'); v.pause(); }
+    }, {passive:true});
+    function tick(){
+      if(mx!==null){
+        st.forEach(function(s){
+          var r = s.svg.getBoundingClientRect();
+          if(r.width){
+            var scale = r.height/340;
+            var cx = r.left + 111*scale, cy = r.top + 169.5*scale;
+            var dx = mx-cx, dy = my-cy;
+            var d = Math.sqrt(dx*dx+dy*dy) || 1;
+            var k = Math.min(1, d/260);
+            s.tx = 111 + (dx/d)*55*k;
+            s.ty = 169.5 + (dy/d)*48*k;
+          }
+          s.x += (s.tx-s.x)*0.14;
+          s.y += (s.ty-s.y)*0.14;
+          if(s.engaged){ s.pupil.setAttribute('cx', s.x.toFixed(1)); s.pupil.setAttribute('cy', s.y.toFixed(1)); }
+        });
       }
-    }catch(e){}
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   })();
-
-  /* Offer countdown */
-  (function(){
-    // ── SINGLE SOURCE OF TRUTH FOR THE OFFER DEADLINE ────────────────────
-    // End of day Monday, September 7, 2026, America/Chicago = 2026-09-08T05:00:00Z.
-    // Hardcoded as a UTC instant so the countdown is correct in every timezone.
-    // WHEN THE OFFER DATE MOVES: change this one line, then update the two
-    // human-readable strings that must match it — the "Sept 7" in the offer
-    // block (.offer-through) and the footer fallback text (#foot-date).
-    var DEADLINE = Date.parse('2026-09-08T05:00:00Z');
-
-    var elCountdown = document.getElementById('countdown');
-    var elDiscount  = document.getElementById('offer-discount');
-    var elClosed    = document.getElementById('offer-closed');
-    var elFootDate  = document.getElementById('foot-date');
-
-    function pad(n){ return String(n).padStart(2,'0'); }
-
-    function render(){
-      var diff = DEADLINE - Date.now();
-      if (diff <= 0){
-        // Post-deadline: the section must still read as an offer block.
-        if (elDiscount)  elDiscount.hidden  = true;
-        if (elCountdown) elCountdown.hidden = true;
-        if (elClosed)    elClosed.hidden    = false;
-        return false; // stop ticking
-      }
-      var s = Math.floor(diff/1000);
-      var days = Math.floor(s/86400); s -= days*86400;
-      var h = Math.floor(s/3600);     s -= h*3600;
-      var m = Math.floor(s/60);       s -= m*60;
-      if (elCountdown){
-        elCountdown.textContent = days + (days===1 ? ' day' : ' days') + ' · ' + pad(h)+':'+pad(m)+':'+pad(s);
-      }
-      return true;
-    }
-
-    // Footer date derived from the same constant (static text stays as JS-off fallback).
-    if (elFootDate){
-      try {
-        var last = new Date(DEADLINE - 1); // 23:59:59 on the offer's final day, Central
-        elFootDate.textContent = 'Offer ends ' + new Intl.DateTimeFormat('en-US', {
-          weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'America/Chicago'
-        }).format(last);
-      } catch(e){ /* keep the static fallback already in the HTML */ }
-    }
-
-    if (render()){
-      var timer = setInterval(function(){ if(!render()) clearInterval(timer); }, 1000);
-    }
-  })();
+})();
 </script>
-
 </body>
 </html>
